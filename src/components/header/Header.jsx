@@ -50,10 +50,10 @@ export default function Header() {
             Início
           </Link>
           <Link
-            to="/quem-somos"
+            to="/sobre"
             className="uppercase tracking-wide text-neutral-50 hover:text-orange-500 transition-colors duration-200"
           >
-            Quem Somos
+            Sobre
           </Link>
           <Link
             to="/servicos"
