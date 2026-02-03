@@ -426,6 +426,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Seção Contato & Localização */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+          {/* Título */}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 mb-4">
+            Contato & Localização
+          </h2>
+          <p className="text-neutral-700 mb-12 max-w-3xl mx-auto">
+            Entre em contacto connosco ou visite-nos. Estamos prontos para
+            oferecer soluções eficientes em manutenção predial e tecnologia da
+            informação.
+          </p>
+
+          {/* Cards de contato */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Telefone / WhatsApp */}
+            <div className="group bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center transition transform hover:shadow-2xl hover:-translate-y-2">
+              <i className="fas fa-phone text-orange-500 text-4xl mb-4 group-hover:text-orange-600 transition"></i>
+              <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                Telefone / WhatsApp
+              </h3>
+              <a
+                href="https://wa.me/244900000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-700 hover:text-orange-500 transition"
+              >
+                +244 972 614 886
+              </a>
+            </div>
+
+            {/* Endereço */}
+            <div className="group bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center transition transform hover:shadow-2xl hover:-translate-y-2">
+              <i className="fas fa-map-marker-alt text-orange-500 text-4xl mb-4 group-hover:text-orange-600 transition"></i>
+              <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                Endereço
+              </h3>
+              <p className="text-neutral-700 text-center">
+                Centralidade do Kilamba Quarteirão F, edifício F27 apartamento
+                91, <br /> Luanda, Angola
+              </p>
+            </div>
+
+            {/* Horário */}
+            <div className="group bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center transition transform hover:shadow-2xl hover:-translate-y-2">
+              <i className="fas fa-clock text-orange-500 text-4xl mb-4 group-hover:text-orange-600 transition"></i>
+              <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                Horário de Atendimento
+              </h3>
+              <p className="text-neutral-700 text-center">
+                Seg - Sex: 08:00 - 17:00 <br />
+              </p>
+            </div>
+          </div>
+
+          {/* Google Maps */}
+          <div className="mt-12 rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              title="Mapa Nwayami - Luanda"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.7343727422167!2d13.25866857414194!3d-8.996571892629392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a521feccbfcdc5b%3A0x39338cb33ba2f1ea!2sN.Wayami!5e0!3m2!1spt-PT!2sao!4v1770129007183!5m2!1spt-PT!2sao"
+              className="w-full h-64 md:h-96 border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção CTA Final */}
+      <section className="relative py-20 bg-orange-500">
+        {/* Overlay suave */}
+        <div className="absolute inset-0 bg-black/20"></div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 text-center text-neutral-50">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Pronto para iniciar o seu próximo projeto?
+          </h2>
+
+          <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-neutral-100">
+            Entre em contacto com a Nwayami e descubra soluções eficientes em
+            manutenção predial e tecnologia da informação, feitas à medida das
+            necessidades do seu negócio.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Link
+              to="/contato"
+              className="bg-neutral-50 text-orange-500 px-10 py-4 rounded-lg font-bold uppercase shadow-lg hover:bg-neutral-200 transition"
+            >
+              Falar Connosco
+            </Link>
+
+            <a
+              href="https://wa.me/2449972614886"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-neutral-50 text-neutral-50 px-10 py-4 rounded-lg font-bold uppercase hover:bg-neutral-50 hover:text-orange-500 transition flex items-center justify-center gap-2"
+            >
+              <i className="fab fa-whatsapp text-xl"></i>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <Footer />
     </>
