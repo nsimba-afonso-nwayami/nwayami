@@ -17,17 +17,18 @@ export default function Home() {
   return (
     <>
       <title>Nwayami</title>
-      {/*Header */}
+      {/*Header*/}
       <Header />
 
+      {/*Hero*/}
       <section className="relative w-full h-[90vh]">
         <Swiper
-          modules={[Autoplay, Pagination,]}
+          modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation
           loop
-          className="h-full"
+          className="h-full relative"
         >
           <SwiperSlide>
             <div className="relative w-full h-full">
@@ -37,9 +38,9 @@ export default function Home() {
                 className="w-full h-full object-cover brightness-75"
               />
 
-              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 hero-overlay"></div>
 
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
                   Manutenção Predial Confiável
                 </h1>
@@ -64,7 +65,7 @@ export default function Home() {
                 className="w-full h-full object-cover brightness-75"
               />
 
-              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 hero-overlay"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
@@ -91,7 +92,7 @@ export default function Home() {
                 className="w-full h-full object-cover brightness-75"
               />
 
-              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 hero-overlay"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
@@ -113,7 +114,9 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/*Footer */}
+      {/*sobre*/}
+
+      {/*Footer*/}
       <Footer />
     </>
   );
