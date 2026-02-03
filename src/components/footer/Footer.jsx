@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex mt-6 space-x-4">
             {/* Redes sociais */}
             <a
-              href="#"
+              href="https://www.facebook.com/n.wayami/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-12 h-12 text-neutral-400 bg-neutral-800 rounded-full border border-neutral-700 shadow-md hover:text-neutral-50 hover:bg-orange-500 hover:border-orange-500 transform hover:scale-110 transition duration-300"
@@ -22,7 +22,7 @@ export default function Footer() {
               <i className="fab fa-facebook-f text-lg"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/n.wayami/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-12 h-12 text-neutral-400 bg-neutral-800 rounded-full border border-neutral-700 shadow-md hover:text-neutral-50 hover:bg-orange-500 hover:border-orange-500 transform hover:scale-110 transition duration-300"
@@ -30,12 +30,12 @@ export default function Footer() {
               <i className="fab fa-tiktok text-lg"></i>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/n-wayami/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-12 h-12 text-neutral-400 bg-neutral-800 rounded-full border border-neutral-700 shadow-md hover:text-neutral-50 hover:bg-orange-500 hover:border-orange-500 transform hover:scale-110 transition duration-300"
             >
-              <i className="fab fa-instagram text-lg"></i>
+              <i className="fab fa-linkedin text-lg"></i>
             </a>
           </div>
         </div>
