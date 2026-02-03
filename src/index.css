@@ -139,18 +139,7 @@ body {
   padding: 12px;
   width: 50px;
   height: 50px;
-  top: 50%; /* centraliza verticalmente */
-  transform: translateY(-50%);
 }
-
- /* Afasta lateralmente */
-  .swiper-button-prev {
-    left: 50px; /* distância da esquerda */
-  }
-
-  .swiper-button-next {
-    right: 20px; /* distância da direita */
-  }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
@@ -158,10 +147,3 @@ body {
   background-color: rgba(0,0,0,0.6);
 }
 
-
-@media (max-width: 768px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
-  }
-}
