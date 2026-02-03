@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 //Site
 import Home from "../pages/site/Home";
 import Sobre from "../pages/site/Sobre";
-import Servicos from "../pages/site/Sobre";
+import Servicos from "../pages/site/Servicos";
 import NotFound from "../pages/site/NotFound";
 
 export default function AppRoutes() {
