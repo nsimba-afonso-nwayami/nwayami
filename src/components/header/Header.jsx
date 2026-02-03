@@ -81,7 +81,7 @@ export default function Header() {
               className="border border-orange-500 text-orange-500 font-bold uppercase tracking-wide px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-neutral-50 transition-colors duration-200 flex items-center justify-center w-full md:w-auto"
             >
               <i className="fas fa-envelope"></i>
-              Fale Conosco
+              Fale Connosco
             </Link>
 
             <a
