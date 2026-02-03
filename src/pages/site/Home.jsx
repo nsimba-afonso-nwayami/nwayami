@@ -4,6 +4,22 @@ import Footer from "../../components/footer/Footer";
 import HeroImg1 from "../../assets/img/hero1.jpg";
 import HeroImg2 from "../../assets/img/hero2.jpg";
 import HeroImg3 from "../../assets/img/hero3.jpg";
+import SobreImg2 from "../../assets/img/sobre2.jpg";
+import Parallax from "../../assets/img/parallax.jpg";
+import ProjetoImg1 from "../../assets/img/projeto1.jpg";
+import ProjetoImg2 from "../../assets/img/projeto2.jpg";
+import ProjetoImg3 from "../../assets/img/projeto3.jpg";
+import ProjetoImg4 from "../../assets/img/projeto4.jpg";
+import ClienteBgImg from "../../assets/img/clientebg.jpg";
+import ClienteImg1 from "../../assets/img/cliente1.png";
+import ClienteImg2 from "../../assets/img/cliente2.png";
+import ClienteImg3 from "../../assets/img/cliente3.png";
+import ClienteImg4 from "../../assets/img/cliente4.png";
+import ClienteImg5 from "../../assets/img/cliente5.png";
+import ClienteImg6 from "../../assets/img/cliente6.png";
+import ClienteImg7 from "../../assets/img/cliente7.png";
+import ClienteImg8 from "../../assets/img/cliente8.png";
+import ClienteImg9 from "../../assets/img/cliente8.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -13,14 +29,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import LightGallery from "lightgallery/react";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
+
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+
 export default function Home() {
   return (
     <>
       <title>Nwayami</title>
-      {/*Header*/}
+      {/* Header */}
       <Header />
 
-      {/*Hero*/}
+      {/* Hero */}
       <section className="relative w-full h-[90vh]">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
@@ -114,9 +138,295 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/*sobre*/}
+      {/* sobre */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-20 flex flex-col md:flex-row items-center gap-8">
+        {/* Texto */}
+        <div className="md:w-1/2">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 mb-4">
+            Sobre a Nwayami
+          </h2>
+          <p className="text-neutral-800 text-lg md:text-xl mb-6">
+            Na Nwayami, oferecemos soluções confiáveis em manutenção predial e
+            tecnologia da informação. Garantimos eficiência, segurança e
+            inovação em cada projeto, adaptando-nos às necessidades do seu
+            negócio.
+          </p>
+          <Link
+            to="/sobre"
+            className="inline-block bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+          >
+            Saiba Mais
+          </Link>
+        </div>
 
-      {/*Footer*/}
+        {/* Imagem */}
+        <div className="md:w-1/2">
+          <img
+            src={SobreImg2}
+            alt="Sobre a Nwayami"
+            className="w-full h-auto rounded-lg shadow-lg object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Serviços */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-20">
+        {/* Título da Seção */}
+        <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 text-center mb-4">
+          Nossos Serviços
+        </h2>
+        <p className="text-center text-neutral-700 mb-12 max-w-3xl mx-auto">
+          Oferecemos soluções completas e confiáveis para manutenção predial e
+          tecnologia da informação, garantindo eficiência, segurança e inovação
+          em cada projeto.
+        </p>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Card 1: Manutenção Predial */}
+          <div className="bg-neutral-50 shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition">
+            <i className="fas fa-tools text-orange-500 text-4xl mb-4"></i>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">
+              Manutenção Predial
+            </h3>
+            <p className="text-neutral-700 mb-4">
+              Oferecemos serviços especializados de manutenção predial,
+              garantindo a conservação e o bom funcionamento de todos os
+              sistemas e estruturas do seu imóvel.
+            </p>
+            <Link
+              to="/servicos/manutencao-predial"
+              className="mt-auto bg-orange-500 text-neutral-50 px-6 py-2 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+            >
+              Saiba Mais
+            </Link>
+          </div>
+
+          {/* Card 2: Tecnologia da Informação */}
+          <div className="bg-neutral-50 shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition">
+            <i className="fas fa-network-wired text-orange-500 text-4xl mb-4"></i>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">
+              Tecnologia da Informação
+            </h3>
+            <p className="text-neutral-700 mb-4">
+              Oferecemos otimização da infraestrutura digital da sua empresa,
+              melhorando a conectividade e segurança dos sistemas. Atuamos em
+              redes, suporte técnico e proteção de dados.
+            </p>
+            <Link
+              to="/servicos/tecnologia-informacao"
+              className="mt-auto bg-orange-500 text-neutral-50 px-6 py-2 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+            >
+              Saiba Mais
+            </Link>
+          </div>
+
+          {/* Card 3: Consultoria */}
+          <div className="bg-neutral-50 shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition">
+            <i className="fas fa-lightbulb text-orange-500 text-4xl mb-4"></i>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">
+              Consultoria
+            </h3>
+            <p className="text-neutral-700 mb-4">
+              Oferecemos soluções personalizadas para gestão eficaz da
+              manutenção predial e TI, ajudando a identificar necessidades,
+              implementar melhorias e otimizar processos com foco em eficiência
+              e segurança.
+            </p>
+            <Link
+              to="/servicos/consultoria"
+              className="mt-auto bg-orange-500 text-neutral-50 px-6 py-2 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+            >
+              Saiba Mais
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção Parallax */}
+      <section
+        className="relative w-full h-[60vh] flex items-center justify-center text-center"
+        style={{
+          backgroundImage: `url(${Parallax})`,
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        {/* Overlay escura */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Conteúdo */}
+        <div className="relative z-10 px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-50 mb-4 uppercase">
+            Soluções Industriais e Digitais
+          </h2>
+          <p className="text-neutral-200 text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+            Conectamos manutenção predial e tecnologia da informação para
+            oferecer eficiência, segurança e inovação em cada projeto.
+          </p>
+          <Link
+            to="/contato"
+            className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+          >
+            Solicitar Orçamento
+          </Link>
+        </div>
+      </section>
+
+      {/* Seção Projetos */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+          {/* Título */}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 mb-4">
+            Nossos Projetos
+          </h2>
+          <p className="text-neutral-700 mb-12 max-w-3xl mx-auto">
+            Confira alguns dos projetos realizados pela Nwayami, unindo
+            manutenção predial e tecnologia da informação com qualidade,
+            segurança e inovação.
+          </p>
+
+          {/* Galeria */}
+          <LightGallery
+            speed={500}
+            plugins={[lgThumbnail, lgZoom]}
+            elementClassNames="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+          >
+            {/* Projeto 1 */}
+            <a
+              href={ProjetoImg1}
+              className="relative group overflow-hidden rounded-xl shadow-lg"
+            >
+              <img
+                src={ProjetoImg1}
+                alt="Projeto 1"
+                className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+              />
+              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <i className="fas fa-search-plus text-orange-500 text-5xl"></i>
+              </div>
+            </a>
+
+            {/* Projeto 2 */}
+            <a
+              href={ProjetoImg2}
+              className="relative group overflow-hidden rounded-xl shadow-lg"
+            >
+              <img
+                src={ProjetoImg2}
+                alt="Projeto 2"
+                className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+              />
+              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <i className="fas fa-search-plus text-orange-500 text-5xl"></i>
+              </div>
+            </a>
+
+            {/* Projeto 3 */}
+            <a
+              href={ProjetoImg3}
+              className="relative group overflow-hidden rounded-xl shadow-lg"
+            >
+              <img
+                src={ProjetoImg3}
+                alt="Projeto 3"
+                className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+              />
+              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <i className="fas fa-search-plus text-orange-500 text-5xl"></i>
+              </div>
+            </a>
+
+            {/* Projeto 4 */}
+            <a
+              href={ProjetoImg4}
+              className="relative group overflow-hidden rounded-xl shadow-lg"
+            >
+              <img
+                src={ProjetoImg4}
+                alt="Projeto 4"
+                className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+              />
+              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <i className="fas fa-search-plus text-orange-500 text-5xl"></i>
+              </div>
+            </a>
+          </LightGallery>
+        </div>
+      </section>
+
+      {/* Seção Clientes & Parceiros */}
+      <section
+        className="relative py-20"
+        style={{
+          backgroundImage: `url(${ClienteBgImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+          {/* Título */}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 text-center mb-4">
+            Clientes & Parceiros
+          </h2>
+          <p className="text-neutral-300 text-center mb-12 max-w-3xl mx-auto">
+            Empresas que confiam na Nwayami para soluções em manutenção predial
+            e tecnologia da informação, construindo parcerias sólidas e
+            duradouras.
+          </p>
+
+          {/* Swiper Logos */}
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            loop
+            spaceBetween={30}
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+              },
+              640: {
+                slidesPerView: 3,
+              },
+              768: {
+                slidesPerView: 4,
+              },
+              1024: {
+                slidesPerView: 6,
+              },
+            }}
+            className="flex items-center"
+          >
+            {[
+              ClienteImg1,
+              ClienteImg2,
+              ClienteImg3,
+              ClienteImg4,
+              ClienteImg5,
+              ClienteImg6,
+              ClienteImg7,
+              ClienteImg8,
+              ClienteImg9,
+            ].map((logo, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex items-center justify-center">
+                  <img
+                    src={logo}
+                    alt={`Cliente ${index + 1}`}
+                    className="max-h-20 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* Footer */}
       <Footer />
     </>
   );
