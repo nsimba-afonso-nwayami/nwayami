@@ -8,8 +8,7 @@ export default function Footer() {
         <div className="md:col-span-1">
           <h3 className="text-3xl font-bold text-orange-500 mb-4">NWAYAMI</h3>
           <p className="text-neutral-400 leading-relaxed">
-            Soluções confiáveis em manutenção predial e construção. Garantimos
-            qualidade, segurança e eficiência em cada projeto.
+            Soluções confiáveis em manutenção predial, tecnologia da informação e consultoria. Garantimos eficiência, segurança e inovação em cada projeto.
           </p>
           <div className="flex mt-6 space-x-4">
             {/* Redes sociais */}
