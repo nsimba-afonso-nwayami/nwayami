@@ -45,6 +45,13 @@ export default function ServicosConsultoria() {
             identificar necessidades, otimizar processos e implementar soluções
             eficazes em manutenção predial e tecnologia da informação.
           </p>
+
+          <Link
+            to="/contato"
+            className="inline-block bg-orange-500 text-neutral-50 px-8 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+          >
+            Solicitar Orçamento
+          </Link>
         </div>
 
         {/* Lista de serviços */}
