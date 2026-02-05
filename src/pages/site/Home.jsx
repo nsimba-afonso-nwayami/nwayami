@@ -41,7 +41,7 @@ import lgZoom from "lightgallery/plugins/zoom";
 export default function Home() {
   return (
     <>
-      <title>Nwayami</title>
+      <title>Nwayami | Soluções em Manutenção Predial e TI</title>
       {/* Header */}
       <Header />
 
