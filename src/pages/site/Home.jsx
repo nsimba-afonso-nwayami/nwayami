@@ -149,7 +149,7 @@ export default function Home() {
           </h2>
           <p className="text-neutral-800 text-lg md:text-xl mb-6">
             Na Nwayami, oferecemos soluções confiáveis em manutenção predial e
-            tecnologia da informação. Garantimos eficiência, segurança e
+            tecnologia de informação. Garantimos eficiência, segurança e
             inovação em cada projeto, adaptando-nos às necessidades do seu
             negócio.
           </p>
@@ -179,7 +179,7 @@ export default function Home() {
         </h2>
         <p className="text-center text-neutral-700 mb-12 max-w-3xl mx-auto">
           Oferecemos soluções completas e confiáveis para manutenção predial e
-          tecnologia da informação, garantindo eficiência, segurança e inovação
+          tecnologia de informação, garantindo eficiência, segurança e inovação
           em cada projeto.
         </p>
 
@@ -204,11 +204,11 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Card 2: Tecnologia da Informação */}
+          {/* Card 2: Tecnologia de Informação */}
           <div className="bg-neutral-50 shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition">
             <i className="fas fa-network-wired text-orange-500 text-4xl mb-4"></i>
             <h3 className="text-xl font-bold text-neutral-900 mb-2">
-              Tecnologia da Informação
+              Tecnologia de Informação
             </h3>
             <p className="text-neutral-700 mb-4">
               Oferecemos otimização da infraestrutura digital da sua empresa,

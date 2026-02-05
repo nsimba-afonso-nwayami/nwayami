@@ -28,7 +28,7 @@ export default function Servicos() {
             Nossos <span className="text-orange-500">Serviços</span>
           </h1>
           <p className="text-neutral-200 text-lg md:text-xl max-w-2xl mx-auto">
-            Soluções completas em manutenção predial, tecnologia da informação e
+            Soluções completas em manutenção predial, tecnologia de informação e
             consultoria, com foco em eficiência, segurança e inovação.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function Servicos() {
         </h2>
         <p className="text-neutral-700 text-lg md:text-xl max-w-3xl mx-auto">
           Na Nwayami, combinamos experiência e inovação para fornecer serviços
-          especializados em manutenção predial, tecnologia da informação e
+          especializados em manutenção predial, tecnologia de informação e
           consultoria. Cada projeto é cuidadosamente planejado para garantir
           máxima eficiência, segurança e valor para o seu negócio.
         </p>

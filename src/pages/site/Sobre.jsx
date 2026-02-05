@@ -73,7 +73,7 @@ export default function Sobre() {
           </h2>
           <p className="text-neutral-700 text-lg md:text-xl mb-6">
             Contamos com profissionais especializados em manutenção predial e
-            tecnologia da informação, garantindo soluções inovadoras, eficientes
+            tecnologia de informação, garantindo soluções inovadoras, eficientes
             e seguras para cada projeto.
           </p>
           <ul className="list-disc list-inside text-neutral-700 mb-6">

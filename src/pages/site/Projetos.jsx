@@ -93,7 +93,7 @@ export default function Projetos() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 mb-4">
-            Projetos de Tecnologia da Informação
+            Projetos de Tecnologia de Informação
           </h2>
           <p className="text-neutral-700 mb-12 max-w-3xl mx-auto">
             Implementações tecnológicas e soluções digitais para melhorar a
