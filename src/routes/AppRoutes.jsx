@@ -7,6 +7,7 @@ import ServicosManutencaoPredial from "../pages/site/ServicosManutencaoPredial";
 import ServicosTecnologiaInformacao from "../pages/site/ServicosTecnologiaInformacao";
 import ServicosConsultoria from "../pages/site/ServicosConsultoria";
 import Projetos from "../pages/site/Projetos";
+import Contato from "../pages/site/Contato";
 import NotFound from "../pages/site/NotFound";
 
 export default function AppRoutes() {
@@ -20,6 +21,7 @@ export default function AppRoutes() {
       <Route path="/servicos/tecnologia-informacao" element={<ServicosTecnologiaInformacao />} />
       <Route path="/servicos/consultoria" element={<ServicosConsultoria />} />
       <Route path="/projetos" element={<Projetos />} />
+      <Route path="/contato" element={<Contato />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
