@@ -20,6 +20,7 @@ import ClienteImg6 from "../../assets/img/cliente6.png";
 import ClienteImg7 from "../../assets/img/cliente7.png";
 import ClienteImg8 from "../../assets/img/cliente8.png";
 import ClienteImg9 from "../../assets/img/cliente8.png";
+import VideoDepoimento from "../../assets/video/depoimentos.mp4";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -423,6 +424,29 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+      </section>
+
+      {/* Seção Depoimentos */}
+      <section className="py-20 bg-neutral-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 mb-4">
+            Depoimentos de Clientes
+          </h2>
+          <p className="text-neutral-700 mb-12 max-w-3xl mx-auto">
+            Veja o que nossos clientes dizem sobre nossos serviços em manutenção
+            predial e tecnologia da informação.
+          </p>
+
+          {/* Player de vídeo com capa */}
+          <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+            <video
+              src={VideoDepoimento}
+              poster={SobreImg2} // imagem de capa
+              controls
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
         </div>
       </section>
 
