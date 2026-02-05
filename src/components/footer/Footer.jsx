@@ -26,7 +26,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="flex items-center justify-center w-12 h-12 text-neutral-400 bg-neutral-800 rounded-full border border-neutral-700 shadow-md hover:text-neutral-50 hover:bg-orange-500 hover:border-orange-500 transform hover:scale-110 transition duration-300"
             >
-              <i className="fab fa-tiktok text-lg"></i>
+              <i className="fab fa-instagram text-lg"></i>
             </a>
             <a
               href="https://www.linkedin.com/company/n-wayami/posts/?feedView=all"
