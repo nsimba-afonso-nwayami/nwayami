@@ -61,7 +61,7 @@ export default function ServicosManutencaoPredial() {
             foco em segurança, eficiência e qualidade.
           </p>
 
-          <ul className="list-disc list-inside text-neutral-700 space-y-2">
+          <ul className="list-disc list-inside text-neutral-700 space-y-2 mb-6">
             <li>Gestão e manutenção de ETA</li>
             <li>Sistemas de canalização</li>
             <li>Instalações elétricas de média e alta tensão</li>
@@ -73,6 +73,13 @@ export default function ServicosManutencaoPredial() {
             <li>Manutenção de piscinas</li>
             <li>Serralharia</li>
           </ul>
+
+          <Link
+            to="/contato"
+            className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+          >
+            Solicitar Orçamento
+          </Link>
         </div>
 
         {/* Galeria */}
