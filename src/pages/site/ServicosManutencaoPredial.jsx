@@ -6,6 +6,17 @@ import ServicosManutencao1 from "../../assets/img/manutencao1.jpg";
 import ServicosManutencao2 from "../../assets/img/manutencao2.jpg";
 import ServicosManutencao3 from "../../assets/img/manutencao3.jpg";
 
+import LightGallery from "lightgallery/react";
+
+// plugins
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+
+// styles
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
+
 export default function ServicosManutencaoPredial() {
   return (
     <>
@@ -64,23 +75,46 @@ export default function ServicosManutencaoPredial() {
           </ul>
         </div>
 
-        {/* Imagens */}
-        <div className="md:w-1/2 grid grid-cols-2 gap-4">
-          <img
-            src={ServicosManutencao1}
-            alt="Serviço de manutenção"
-            className="w-full h-48 object-cover rounded-lg shadow-md"
-          />
-          <img
-            src={ServicosManutencao2}
-            alt="Serviço de manutenção"
-            className="w-full h-48 object-cover rounded-lg shadow-md"
-          />
-          <img
-            src={ServicosManutencao3}
-            alt="Serviço de manutenção"
-            className="w-full h-48 object-cover rounded-lg shadow-md col-span-2"
-          />
+        {/* Galeria */}
+        <div className="md:w-1/2">
+          <LightGallery
+            speed={500}
+            plugins={[lgThumbnail, lgZoom]}
+            elementClassNames="grid grid-cols-2 gap-4"
+          >
+            <a
+              href={ServicosManutencao1}
+              className="block overflow-hidden rounded-lg shadow-md"
+            >
+              <img
+                src={ServicosManutencao1}
+                alt="Serviço de manutenção"
+                className="w-full h-48 object-cover hover:scale-105 transition duration-300"
+              />
+            </a>
+
+            <a
+              href={ServicosManutencao2}
+              className="block overflow-hidden rounded-lg shadow-md"
+            >
+              <img
+                src={ServicosManutencao2}
+                alt="Serviço de manutenção"
+                className="w-full h-48 object-cover hover:scale-105 transition duration-300"
+              />
+            </a>
+
+            <a
+              href={ServicosManutencao3}
+              className="block overflow-hidden rounded-lg shadow-md col-span-2"
+            >
+              <img
+                src={ServicosManutencao3}
+                alt="Serviço de manutenção"
+                className="w-full h-48 object-cover hover:scale-105 transition duration-300"
+              />
+            </a>
+          </LightGallery>
         </div>
       </section>
 
@@ -92,7 +126,7 @@ export default function ServicosManutencaoPredial() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
               <i className="fas fa-user-cog text-orange-500 text-4xl mb-4"></i>
               <h3 className="text-xl font-bold mb-2">Equipa Especializada</h3>
               <p className="text-neutral-700">
@@ -101,7 +135,7 @@ export default function ServicosManutencaoPredial() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
               <i className="fas fa-shield-alt text-orange-500 text-4xl mb-4"></i>
               <h3 className="text-xl font-bold mb-2">Segurança Garantida</h3>
               <p className="text-neutral-700">
@@ -110,7 +144,7 @@ export default function ServicosManutencaoPredial() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
               <i className="fas fa-clock text-orange-500 text-4xl mb-4"></i>
               <h3 className="text-xl font-bold mb-2">Rapidez e Eficiência</h3>
               <p className="text-neutral-700">
