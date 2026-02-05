@@ -39,7 +39,7 @@ export default function Contato() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Formulário */}
           <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <h2 className="text-3xl font-extrabold text-orange-500 mb-6">
+            <h2 className="text-3xl text-center font-extrabold text-orange-500 mb-6">
               Envie uma mensagem
             </h2>
 
