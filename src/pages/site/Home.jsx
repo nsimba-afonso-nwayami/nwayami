@@ -456,7 +456,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
           {/* Título */}
           <h2 className="text-3xl md:text-4xl font-extrabold text-orange-500 mb-4">
-            Contato & Localização
+            Contacto & Localização
           </h2>
           <p className="text-neutral-700 mb-12 max-w-3xl mx-auto">
             Entre em contacto connosco ou visite-nos. Estamos prontos para
