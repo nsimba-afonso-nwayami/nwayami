@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import WhatsAppButton from "../../components/WhatsAppButton";
 import ServicosImg from "../../assets/img/servicos.jpg";
 
 export default function Servicos() {
@@ -165,6 +166,9 @@ export default function Servicos() {
           </div>
         </div>
       </section>
+
+      {/* Botão WhatsApp fixo */}
+      <WhatsAppButton phone="244972614886" size={64} />
 
       {/* Footer */}
       <Footer />

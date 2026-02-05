@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import WhatsAppButton from "../../components/WhatsAppButton";
 import ServicosManutencaoBg from "../../assets/img/manutencao.jpg";
 import ServicosManutencao1 from "../../assets/img/manutencao1.jpg";
 import ServicosManutencao2 from "../../assets/img/manutencao2.jpg";
@@ -193,6 +194,9 @@ export default function ServicosManutencaoPredial() {
           </div>
         </div>
       </section>
+
+      {/* Botão WhatsApp fixo */}
+      <WhatsAppButton phone="244972614886" size={64} />
 
       {/* Footer */}
       <Footer />
