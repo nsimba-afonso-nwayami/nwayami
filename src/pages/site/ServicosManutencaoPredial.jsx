@@ -177,7 +177,7 @@ export default function ServicosManutencaoPredial() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link
-              to="/contato"
+              to="/solicitar-orcamento"
               className="bg-neutral-50 text-orange-500 px-10 py-4 rounded-lg font-bold uppercase shadow-lg hover:bg-neutral-200 transition"
             >
               Solicitar Orçamento

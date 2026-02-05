@@ -74,7 +74,7 @@ export default function Home() {
                   Garantimos qualidade, segurança e eficiência em cada projeto.
                 </p>
                 <Link
-                  to="/contato"
+                  to="/solicitar-orcamento"
                   className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
                 >
                   Solicitar Orçamento
@@ -101,7 +101,7 @@ export default function Home() {
                   Transformamos suas ideias em estruturas seguras e duráveis.
                 </p>
                 <Link
-                  to="/contato"
+                  to="/solicitar-orcamento"
                   className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
                 >
                   Solicitar Orçamento
@@ -129,7 +129,7 @@ export default function Home() {
                   edificação.
                 </p>
                 <Link
-                  to="/contato"
+                  to="/solicitar-orcamento"
                   className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
                 >
                   Solicitar Orçamento
@@ -268,7 +268,7 @@ export default function Home() {
             oferecer eficiência, segurança e inovação em cada projeto.
           </p>
           <Link
-            to="/contato"
+            to="/solicitar-orcamento"
             className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
           >
             Solicitar Orçamento

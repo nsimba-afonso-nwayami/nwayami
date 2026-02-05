@@ -48,7 +48,7 @@ export default function ServicosConsultoria() {
           </p>
 
           <Link
-            to="/contato"
+            to="/solicitar-orcamento"
             className="inline-block bg-orange-500 text-neutral-50 px-8 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
           >
             Solicitar Orçamento

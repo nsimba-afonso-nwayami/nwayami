@@ -141,7 +141,7 @@ export default function Projetos() {
           </p>
 
           <Link
-            to="/contato"
+            to="/solicitar-orcamento"
             className="bg-neutral-50 text-orange-500 px-8 py-3 rounded-lg font-bold uppercase hover:bg-neutral-200 transition"
           >
             Solicitar Orçamento
