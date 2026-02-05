@@ -3,7 +3,7 @@ import React from "react";
 export default function WhatsAppButton({
   phone = "244972614886",
   size = 64,
-  tooltip = "Fale conosco no WhatsApp",
+  tooltip = "Fale connosco no WhatsApp",
 }) {
   return (
     <div className="fixed bottom-6 right-6 z-50 group">
