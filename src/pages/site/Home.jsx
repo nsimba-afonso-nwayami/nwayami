@@ -6,7 +6,7 @@ import HeroImg1 from "../../assets/img/hero1.jpg";
 import HeroImg2 from "../../assets/img/hero2.jpg";
 import HeroImg3 from "../../assets/img/hero3.png";
 import HeroImg4 from "../../assets/img/hero4.png";
-import SobreImg2 from "../../assets/img/sobre2.jpg";
+import SobreImg2 from "../../assets/img/sobre2.png";
 import Parallax from "../../assets/img/parallax.jpg";
 import ProjetoImg1 from "../../assets/img/projeto1.jpg";
 import ProjetoImg2 from "../../assets/img/projeto2.jpg";
