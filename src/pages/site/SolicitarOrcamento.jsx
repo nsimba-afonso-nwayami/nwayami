@@ -51,6 +51,9 @@ export default function SolicitarOrcamento() {
     "Instalação e manutenção de rede informática e telecomunicação",
     "Instalação de controle de acesso RFID e fechaduras magnéticas",
     "Serviços de energia renováveis",
+    "Criação de sites",
+    "Criação de sistemas gestão web",
+    "Criação de sistemas personalizados",
   ];
 
   const consultoria = ["Manutenção Predial", "Tecnologia da Informação"];
