@@ -1,10 +1,37 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import toast from "react-hot-toast";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import ContatoImg from "../../assets/img/contato.jpg";
+import { contatoSchema } from "../../validations/contatoSchema";
 
 export default function Contato() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: yupResolver(contatoSchema),
+  });
+
+  const onSubmit = async (data) => {
+    const toastId = toast.loading("Enviando mensagem...");
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      console.log("Mensagem enviada:", data);
+
+      toast.success("Mensagem enviada com sucesso!", { id: toastId });
+      reset();
+    } catch (error) {
+      toast.error("Erro ao enviar mensagem. Tente novamente.", { id: toastId });
+    }
+  };
+
   return (
     <>
       <title>Contato | Nwayami</title>
@@ -43,14 +70,24 @@ export default function Contato() {
               Envie uma mensagem
             </h2>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label className="block text-neutral-700 mb-1">Nome</label>
                 <input
                   type="text"
                   placeholder="Seu nome"
-                  className="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500"
+                  className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${
+                    errors.nome
+                      ? "border-red-500 focus:ring-red-400"
+                      : "border-neutral-300 focus:ring-orange-500"
+                  }`}
+                  {...register("nome")}
                 />
+                {errors.nome && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.nome.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -58,8 +95,18 @@ export default function Contato() {
                 <input
                   type="email"
                   placeholder="Seu email"
-                  className="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500"
+                  className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${
+                    errors.email
+                      ? "border-red-500 focus:ring-red-400"
+                      : "border-neutral-300 focus:ring-orange-500"
+                  }`}
+                  {...register("email")}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -67,8 +114,18 @@ export default function Contato() {
                 <input
                   type="text"
                   placeholder="Seu telefone"
-                  className="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500"
+                  className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${
+                    errors.telefone
+                      ? "border-red-500 focus:ring-red-400"
+                      : "border-neutral-300 focus:ring-orange-500"
+                  }`}
+                  {...register("telefone")}
                 />
+                {errors.telefone && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.telefone.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -76,15 +133,26 @@ export default function Contato() {
                 <textarea
                   rows="5"
                   placeholder="Descreva sua necessidade"
-                  className="w-full resize-none border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500"
+                  className={`w-full resize-none border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${
+                    errors.mensagem
+                      ? "border-red-500 focus:ring-red-400"
+                      : "border-neutral-300 focus:ring-orange-500"
+                  }`}
+                  {...register("mensagem")}
                 ></textarea>
+                {errors.mensagem && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.mensagem.message}
+                  </p>
+                )}
               </div>
 
               <button
                 type="submit"
-                className="w-full cursor-pointer bg-orange-500 text-white py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+                disabled={isSubmitting}
+                className="w-full cursor-pointer bg-orange-500 text-white py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition disabled:opacity-50"
               >
-                Enviar Mensagem
+                {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
               </button>
             </form>
           </div>
