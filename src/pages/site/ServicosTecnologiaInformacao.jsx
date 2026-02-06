@@ -71,6 +71,9 @@ export default function ServicosTecnologiaInformacao() {
             <li>Fechaduras magnéticas</li>
             <li>Serviços de energia renováveis</li>
             <li>Instalação de software de arquitectura e desenho</li>
+            <li>Criação de sites</li>
+            <li>Criação de sistemas gestão web</li>
+            <li>Criação de sistemas personalizados</li>
           </ul>
 
           <Link
