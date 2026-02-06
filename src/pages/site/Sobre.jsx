@@ -83,7 +83,7 @@ export default function Sobre() {
             <li>Compromisso com qualidade e prazos</li>
           </ul>
           <Link
-            to="/contato"
+            to="/solicitar-orcamento"
             className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
           >
             Solicitar Orçamento
