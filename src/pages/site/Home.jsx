@@ -5,6 +5,7 @@ import WhatsAppButton from "../../components/WhatsAppButton";
 import HeroImg1 from "../../assets/img/hero1.jpg";
 import HeroImg2 from "../../assets/img/hero2.jpg";
 import HeroImg3 from "../../assets/img/hero3.jpg";
+import HeroImg4 from "../../assets/img/hero3.jpg";
 import SobreImg2 from "../../assets/img/sobre2.jpg";
 import Parallax from "../../assets/img/parallax.jpg";
 import ProjetoImg1 from "../../assets/img/projeto1.jpg";
@@ -56,14 +57,14 @@ export default function Home() {
           loop
           className="h-full relative"
         >
+          {/* Slide 1 — Manutenção Predial */}
           <SwiperSlide>
             <div className="relative w-full h-full">
               <img
                 src={HeroImg1}
-                alt="Hero 1"
+                alt="Manutenção Predial"
                 className="w-full h-full object-cover brightness-75"
               />
-
               <div className="absolute inset-0 hero-overlay"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
@@ -83,17 +84,17 @@ export default function Home() {
             </div>
           </SwiperSlide>
 
+          {/* Slide 2 — Construção */}
           <SwiperSlide>
             <div className="relative w-full h-full">
               <img
                 src={HeroImg2}
-                alt="Hero 2"
+                alt="Construção"
                 className="w-full h-full object-cover brightness-75"
               />
-
               <div className="absolute inset-0 hero-overlay"></div>
 
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
                   Projetos de Construção Profissionais
                 </h1>
@@ -110,23 +111,51 @@ export default function Home() {
             </div>
           </SwiperSlide>
 
+          {/* Slide 3 — Tecnologia */}
           <SwiperSlide>
             <div className="relative w-full h-full">
               <img
                 src={HeroImg3}
-                alt="Hero 3"
+                alt="Tecnologia da Informação"
                 className="w-full h-full object-cover brightness-75"
               />
-
               <div className="absolute inset-0 hero-overlay"></div>
 
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
-                  Serviços de Manutenção Industrial
+                  Soluções em Tecnologia da Informação
                 </h1>
                 <p className="text-neutral-400 text-lg md:text-xl mb-6 max-w-2xl">
-                  Soluções rápidas e eficientes para qualquer tipo de
-                  edificação.
+                  Redes, segurança eletrônica e sistemas inteligentes para sua
+                  empresa.
+                </p>
+                <Link
+                  to="/solicitar-orcamento"
+                  className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
+                >
+                  Solicitar Orçamento
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Slide 4 — Tecnologia */}
+          <SwiperSlide>
+            <div className="relative w-full h-full">
+              <img
+                src={HeroImg4}
+                alt="Segurança Eletrônica"
+                className="w-full h-full object-cover brightness-75"
+              />
+              <div className="absolute inset-0 hero-overlay"></div>
+
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
+                <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
+                  Segurança e Monitoramento Inteligente
+                </h1>
+                <p className="text-neutral-400 text-lg md:text-xl mb-6 max-w-2xl">
+                  Sistemas de vigilância, controle de acesso e redes
+                  corporativas.
                 </p>
                 <Link
                   to="/solicitar-orcamento"
