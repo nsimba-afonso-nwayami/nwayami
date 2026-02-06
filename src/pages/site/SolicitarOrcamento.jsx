@@ -52,7 +52,7 @@ export default function SolicitarOrcamento() {
     "Instalação de controle de acesso RFID e fechaduras magnéticas",
     "Serviços de energia renováveis",
     "Criação de sites",
-    "Criação de sistemas gestão web",
+    "Criação de sistemas de gestão web",
     "Criação de sistemas personalizados",
   ];
 
