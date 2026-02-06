@@ -14,7 +14,7 @@ export default function SolicitarOrcamento() {
 
       {/* Hero / Capa */}
       <section
-        className="relative h-[50vh] flex items-center justify-center text-center"
+        className="relative h-[60vh] flex items-center justify-center text-center"
         style={{
           backgroundImage: `url(${SolicitarImg})`,
           backgroundSize: "cover",
