@@ -36,7 +36,7 @@ export default function ServicosTecnologiaInformacao() {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 mb-4 uppercase">
             Tecnologia de <span className="text-orange-500">Informação</span>
