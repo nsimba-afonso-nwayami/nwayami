@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import toast from "react-hot-toast";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import ContatoImg from "../../assets/img/contato.jpg";
 import { contatoSchema } from "../../validations/contatoSchema";
@@ -34,7 +35,13 @@ export default function Contato() {
 
   return (
     <>
-      <title>Contato | Nwayami</title>
+      <SEO
+        title="Contato | Nwayami"
+        description="Entre em contato com a Nwayami para serviços de manutenção predial, tecnologia da informação e consultoria em Angola."
+        keywords="contato Nwayami, telefone Nwayami, empresa de manutenção Angola, suporte TI Luanda"
+        image="https://nwayami.vercel.app/seo/contato.jpg"
+        url="https://nwayami.vercel.app/contato"
+      />
 
       {/* Header */}
       <Header />

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import projetoBg from "../../assets/img/projeto.jpg";
 
@@ -22,7 +23,13 @@ import lgZoom from "lightgallery/plugins/zoom";
 export default function Projetos() {
   return (
     <>
-      <title>Projetos | Nwayami</title>
+      <SEO
+        title="Projetos | Nwayami"
+        description="Veja os projetos realizados pela Nwayami nas áreas de manutenção predial, tecnologia da informação e consultoria em Angola."
+        keywords="projetos Nwayami, portfólio de projetos, manutenção predial projetos, projetos de TI Angola"
+        image="https://nwayami.vercel.app/seo/projetos.jpg"
+        url="https://nwayami.vercel.app/projetos"
+      />
 
       {/* Header */}
       <Header />

@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import toast from "react-hot-toast";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import SolicitarImg from "../../assets/img/solicitar.jpg";
 import { solicitarOrcamentoSchema } from "../../validations/solicitarOrcamentoSchema";
@@ -66,7 +67,13 @@ export default function SolicitarOrcamento() {
 
   return (
     <>
-      <title>Solicitar Orçamento | Nwayami</title>
+      <SEO
+        title="Solicitar Orçamento | Nwayami"
+        description="Solicite um orçamento personalizado para serviços de manutenção predial, tecnologia da informação ou consultoria."
+        keywords="solicitar orçamento Nwayami, orçamento manutenção predial, orçamento TI, orçamento consultoria"
+        image="https://nwayami.vercel.app/seo/orcamento.jpg"
+        url="https://nwayami.vercel.app/solicitar-orcamento"
+      />
 
       {/* Header */}
       <Header />

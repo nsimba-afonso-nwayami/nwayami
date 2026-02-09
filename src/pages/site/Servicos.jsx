@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import ServicosImg from "../../assets/img/servicos.jpg";
 
 export default function Servicos() {
   return (
     <>
-      <title>Serviços | Nwayami</title>
+      <SEO
+        title="Serviços | Nwayami"
+        description="Conheça os serviços da Nwayami: manutenção predial, tecnologia da informação e consultoria especializada para empresas em Angola."
+        keywords="serviços Nwayami, manutenção predial Angola, serviços de TI, consultoria empresarial, soluções técnicas"
+        image="https://nwayami.vercel.app/seo/servicos.jpg"
+        url="https://nwayami.vercel.app/servicos"
+      />
 
       {/* Header */}
       <Header />

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import ServicosManutencaoBg from "../../assets/img/manutencao.jpg";
 import ServicosManutencao1 from "../../assets/img/manutencao1.jpg";
@@ -21,7 +22,13 @@ import "lightgallery/css/lg-zoom.css";
 export default function ServicosManutencaoPredial() {
   return (
     <>
-      <title>Manutenção Predial | Nwayami</title>
+      <SEO
+        title="Manutenção Predial | Nwayami"
+        description="Serviços completos de manutenção predial em Angola: elétrica, hidráulica, climatização, pintura e reparos gerais."
+        keywords="manutenção predial Angola, manutenção de edifícios, serviços elétricos, serviços hidráulicos, manutenção preventiva"
+        image="https://nwayami.vercel.app/seo/manutencao.jpg"
+        url="https://nwayami.vercel.app/manutencao-predial"
+      />
 
       {/* Header */}
       <Header />

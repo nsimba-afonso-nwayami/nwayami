@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import ServicosTecnologiaBg from "../../assets/img/tecnologia.jpg";
 import ServicosTecnologia1 from "../../assets/img/tecnologia1.jpg";
@@ -21,7 +22,13 @@ import "lightgallery/css/lg-zoom.css";
 export default function ServicosTecnologiaInformacao() {
   return (
     <>
-      <title>Tecnologia da Informação | Nwayami</title>
+      <SEO
+        title="Tecnologia de Informação | Nwayami"
+        description="Soluções em tecnologia da informação para empresas: redes, suporte técnico, segurança digital e infraestrutura de TI."
+        keywords="tecnologia da informação Angola, suporte técnico, redes de computadores, segurança digital, serviços de TI"
+        image="https://nwayami.vercel.app/seo/ti.jpg"
+        url="https://nwayami.vercel.app/tecnologia-da-informacao"
+      />
 
       {/* Header */}
       <Header />
