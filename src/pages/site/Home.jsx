@@ -123,7 +123,7 @@ export default function Home() {
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
-                  Soluções em Tecnologia da Informação
+                  Soluções em Tecnologia de Informação
                 </h1>
                 <p className="text-neutral-400 text-lg md:text-xl mb-6 max-w-2xl">
                   Redes, segurança eletrônica e sistemas inteligentes para sua
