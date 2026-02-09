@@ -65,7 +65,7 @@ export default function Home() {
                 alt="Manutenção Predial"
                 className="w-full h-full object-cover brightness-75"
               />
-              <div className="absolute inset-0 hero-overlay"></div>
+              <div className="absolute inset-0 bg-black/60"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
@@ -92,7 +92,7 @@ export default function Home() {
                 alt="Construção"
                 className="w-full h-full object-cover brightness-75"
               />
-              <div className="absolute inset-0 hero-overlay"></div>
+              <div className="absolute inset-0 bg-black/60"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
@@ -119,7 +119,7 @@ export default function Home() {
                 alt="Tecnologia da Informação"
                 className="w-full h-full object-cover brightness-75"
               />
-              <div className="absolute inset-0 hero-overlay"></div>
+              <div className="absolute inset-0 bg-black/60"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-neutral-50 uppercase tracking-wider mb-4">
