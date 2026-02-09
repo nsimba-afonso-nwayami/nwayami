@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton";
+import SEO from "../../components/SEO";
 import HeroImg1 from "../../assets/img/hero1.jpg";
 import HeroImg2 from "../../assets/img/hero2.jpg";
 import HeroImg3 from "../../assets/img/hero3.png";
@@ -43,7 +44,14 @@ import lgZoom from "lightgallery/plugins/zoom";
 export default function Home() {
   return (
     <>
-      <title>Nwayami | Soluções em Manutenção Predial e TI</title>
+      <SEO
+        title="Nwayami | Soluções em Manutenção Predial e TI"
+        description="Soluções confiáveis em manutenção predial, tecnologia da informação e consultoria em Luanda, Angola."
+        keywords="manutenção predial Angola, tecnologia da informação Luanda, segurança eletrônica, consultoria TI, Nwayami"
+        image="https://nwayami.vercel.app/seo/home.jpg"
+        url="https://nwayami.vercel.app/"
+      />
+
       {/* Header */}
       <Header />
 
