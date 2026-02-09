@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SEO from "../../components/SEO";
 import SobreImg from "../../assets/img/sobre.jpg";
 import SobreImg2 from "../../assets/img/sobre2.png";
 
 export default function Sobre() {
   return (
     <>
-      <title>Sobre nós | Nwayami</title>
+      <SEO
+        title="Sobre a Nwayami | Empresa de Manutenção Predial e TI em Angola"
+        description="Conheça a Nwayami, empresa angolana especializada em manutenção predial, tecnologia da informação e consultoria. Compromisso com qualidade, segurança e inovação."
+        keywords="sobre Nwayami, empresa de manutenção Angola, empresa de TI Luanda, serviços prediais, consultoria tecnológica"
+        image="https://nwayami.vercel.app/seo/sobre.jpg"
+        url="https://nwayami.vercel.app/sobre"
+      />
 
       {/* Header */}
       <Header />
