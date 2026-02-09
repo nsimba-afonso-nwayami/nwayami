@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://nwayami.vercel.app/</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/sobre</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/servicos</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/servicos/manutencao-predial</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/servicos/tecnologia-informacao</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/servicos/consultoria</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/projetos</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/contato</loc>
+  </url>
+  <url>
+    <loc>https://nwayami.vercel.app/solicitar-orcamento</loc>
+  </url>
+</urlset>
