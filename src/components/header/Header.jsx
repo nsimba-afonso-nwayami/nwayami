@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-neutral-900 border-b border-neutral-800 z-50 shadow-lg">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
+        ${
+          scrolled
+            ? "bg-neutral-900 border-b border-neutral-800 shadow-lg"
+            : "bg-transparent border-transparent"
+        }`}
+    >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -23,7 +40,11 @@ export default function Header() {
         >
           <i
             className={`fas transition-all duration-200
-              ${menuOpen ? "fa-times text-orange-500 rotate-90 scale-110" : "fa-bars rotate-0 scale-100"}
+              ${
+                menuOpen
+                  ? "fa-times text-orange-500 rotate-90 scale-110"
+                  : "fa-bars rotate-0 scale-100"
+              }
             `}
           ></i>
         </button>
@@ -39,7 +60,11 @@ export default function Header() {
             overflow-hidden
             transition-all duration-200 ease-linear
             md:overflow-visible md:max-h-full md:opacity-100 md:translate-y-0
-            ${menuOpen ? "max-h-96 opacity-100 translate-y-0 py-6" : "max-h-0 opacity-0 -translate-y-2 py-0"}
+            ${
+              menuOpen
+                ? "max-h-96 opacity-100 translate-y-0 py-6"
+                : "max-h-0 opacity-0 -translate-y-2 py-0"
+            }
           `}
         >
           {/* Links */}
