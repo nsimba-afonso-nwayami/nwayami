@@ -34,6 +34,7 @@ export default function Projetos() {
           backgroundImage: `url(${projetoBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
