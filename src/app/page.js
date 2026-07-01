@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import Sobre from "@/components/home/Sobre";
 
 // SEO GLOBAL DO SITE
 export const metadata = {
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
      <Hero />
+     <Sobre />
     </>
   );
 }
