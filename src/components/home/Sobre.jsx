@@ -87,16 +87,17 @@ export default function Sobre() {
           </div>
 
           {/* Coluna da Direita: Imagem Limpa */}
-          <div className="relative w-full h-125 lg:h-162.5">
-            <div className="relative w-full h-full overflow-hidden rounded-2xl bg-neutral-200 shadow-sm">
+          <div className="relative w-full h-125 lg:h-162.5 group">
+            <div className="relative w-full h-full overflow-hidden rounded-2xl bg-neutral-200 shadow-sm border border-neutral-100 transition-all duration-500 hover:shadow-xl hover:shadow-orange-950/5 hover:-translate-y-1">
               <Image
                 src={sobre2}
                 alt="Estrutura Nwayami Engenharia"
                 fill
-                className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                priority={true}
+                className="object-cover object-center scale-100 transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              {/* Overlay sutil para integração com o design industrial */}
-              <div className="absolute inset-0 bg-neutral-950/5 pointer-events-none"></div>
+              {/* Overlay sutil industrial quase impercetível */}
+              <div className="absolute inset-0 bg-orange-950/5 pointer-events-none"></div>
             </div>
           </div>
 
