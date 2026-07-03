@@ -1,4 +1,5 @@
-/*import Hero from "@/components/home/Hero";*/
+import BannerSobre from "@/components/sobre/BannerSobre";
+import NossaHstoria from "@/components/sobre/NossaHstoria";
 
 // SEO
 export const metadata = {
@@ -9,6 +10,8 @@ export const metadata = {
 export default function QuemSomos() {
   return (
     <>
+      <BannerSobre />
+      <NossaHstoria />
     </>
   );
 }
