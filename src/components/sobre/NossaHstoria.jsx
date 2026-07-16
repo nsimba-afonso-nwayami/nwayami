@@ -24,17 +24,6 @@ export default function NossaHistoria() {
               />
             </div>
 
-            {/* Card flutuante */}
-            <div className="absolute -bottom-8 right-8 bg-white shadow-xl rounded-2xl px-8 py-6">
-              <h3 className="text-4xl font-bold text-orange-500">
-                15+
-              </h3>
-
-              <p className="text-neutral-600 text-sm uppercase tracking-[2px] mt-1">
-                Anos de Experiência
-              </p>
-            </div>
-
           </div>
 
           {/* Conteúdo */}
