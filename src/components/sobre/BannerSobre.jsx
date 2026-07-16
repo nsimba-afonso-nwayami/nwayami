@@ -32,11 +32,6 @@ export default function BannerSobre() {
             <span className="text-white">Quem Somos</span>
           </div>
 
-          {/* Badge */}
-          <span className="inline-flex items-center gap-2 uppercase tracking-[3px] text-orange-500 font-bold text-xs">
-            Conheça a Nwayami
-          </span>
-
           {/* Título */}
           <h1 className="mt-6 text-5xl lg:text-6xl font-bold text-white leading-tight">
             Engenharia construída
