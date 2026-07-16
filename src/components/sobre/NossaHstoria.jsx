@@ -29,10 +29,6 @@ export default function NossaHistoria() {
           {/* Conteúdo */}
           <div>
 
-            <span className="uppercase tracking-[3px] text-orange-500 font-bold text-xs">
-              Nossa História
-            </span>
-
             <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
               Construindo soluções que
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
