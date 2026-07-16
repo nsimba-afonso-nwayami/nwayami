@@ -11,7 +11,7 @@ export default function BannerPage({
 }) {
   return (
     <section
-      className="relative h-[65vh] min-h-125 flex items-center overflow-hidden bg-cover bg-center bg-fixed"
+      className="relative h-[85vh] min-h-125 flex items-center overflow-hidden bg-cover bg-center bg-fixed"
       style={{
         backgroundImage: `url(${image.src})`,
       }}
