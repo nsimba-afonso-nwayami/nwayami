@@ -1,5 +1,11 @@
 import BannerSobre from "@/components/sobre/BannerSobre";
 import NossaHstoria from "@/components/sobre/NossaHstoria";
+import MissaoVisaoValores from "@/components/sobre/MissaoVisaoValores";
+import AreasAtuacao from "@/components/sobre/AreasAtuacao";
+import NossoProcesso from "@/components/sobre/NossoProcesso";
+import PorqueWayamiSobre from "@/components/sobre/PorqueWayamiSobre";
+import Compromissos from "@/components/sobre/Compromissos";
+import CtaOrcamento from "@/components/home/CtaOrcamento";
 
 // SEO
 export const metadata = {
@@ -12,6 +18,12 @@ export default function QuemSomos() {
     <>
       <BannerSobre />
       <NossaHstoria />
+      <MissaoVisaoValores />
+      <AreasAtuacao />
+      <NossoProcesso />
+      <PorqueWayamiSobre />
+      <Compromissos />
+      <CtaOrcamento />
     </>
   );
 }
