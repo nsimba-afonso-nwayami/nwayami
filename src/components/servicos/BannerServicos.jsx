@@ -10,7 +10,7 @@ export default function BannerServicos() {
       currentPage="Serviços"
       title="Soluções completas em"
       highlight="engenharia e construção."
-      description="Disponibilizamos serviços especializados em construção civil, engenharia, manutenção predial, fiscalização, consultoria técnica e reabilitação de edifícios, sempre com foco na qualidade, segurança e excelência em cada projeto."
+      description="Serviços de engenharia, construção civil, manutenção predial e consultoria, executados com qualidade e rigor técnico."
     />
   );
 }
