@@ -1,5 +1,6 @@
 import BannerContato from "@/components/contato/BannerContato";
 import Formulario from "@/components/contato/Formulario";
+import MapaCta from "@/components/contato/MapaCta";
 
 // SEO
 export const metadata = {
@@ -12,6 +13,7 @@ export default function Contato() {
     <>
       <BannerContato />
       <Formulario />
+      <MapaCta />
     </>
   );
 }
