@@ -1,5 +1,7 @@
 import BannerProjetos from "@/components/projetos/BannerProjetos";
 import Portfolio from "@/components/projetos/Portfolio";
+import ComoExecutamos from "@/components/projetos/ComoExecutamos";
+import TiposDeProjetos from "@/components/projetos/TiposDeProjetos";
 import CtaOrcamento from "@/components/home/CtaOrcamento";
 
 // SEO
@@ -13,6 +15,8 @@ export default function Projetos() {
     <>
       <BannerProjetos />
       <Portfolio />
+      <ComoExecutamos />
+      <TiposDeProjetos />
       <CtaOrcamento />
     </>
   );
