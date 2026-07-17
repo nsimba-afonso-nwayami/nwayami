@@ -37,10 +37,6 @@ export default function Sobre() {
           {/* Coluna da Esquerda: Conteúdo */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <span className="inline-flex items-center gap-3 text-orange-500 font-bold uppercase tracking-[3px] text-xs">
-                Sobre a Nwayami
-              </span>
-
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15]">
                 Engenharia que transforma{" "}
                 <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">

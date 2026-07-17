@@ -68,10 +68,6 @@ export default function Servicos() {
               className="group flex flex-col lg:flex-row lg:items-center justify-between gap-8 py-10 border-b border-neutral-200 hover:border-orange-500 transition-all"
             >
               <div className="flex gap-8">
-                <span className="text-5xl font-bold text-neutral-200 group-hover:text-orange-500 transition">
-                  {(index + 1).toString().padStart(2, "0")}
-                </span>
-
                 <div>
                   <h3 className="text-3xl font-bold text-neutral-900 group-hover:text-orange-500 transition">
                     {service.title}

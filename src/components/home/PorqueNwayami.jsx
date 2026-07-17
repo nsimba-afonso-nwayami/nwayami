@@ -40,10 +40,6 @@ export default function PorqueNwayami() {
 
         {/* HEADER simples e forte */}
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <span className="text-orange-500 uppercase tracking-[3px] font-bold text-xs">
-            Porquê a Nwayami
-          </span>
-
           <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
             Engenharia com
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
