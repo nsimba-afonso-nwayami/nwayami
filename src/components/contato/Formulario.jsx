@@ -2,110 +2,113 @@
 
 export default function Formulario() {
   return (
-    <section id="formulario" className="py-28 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="formulario" className="py-28 bg-neutral-50 text-neutral-900">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">
-            Entre em
+        <div className="max-w-3xl mx-auto text-center mb-24 space-y-4">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+            Entre em{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
               contacto connosco.
             </span>
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-neutral-600">
+          <p className="text-lg leading-relaxed text-neutral-500 font-medium max-w-2xl mx-auto">
             Estamos disponíveis para responder às suas questões, analisar o seu
             projeto e apresentar a melhor solução para as suas necessidades.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-10">
-          {/* Informações */}
-
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl border border-neutral-200 p-10 h-full">
-              <h3 className="text-2xl font-bold text-neutral-900">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+          {/* Informações de Contacto */}
+          <div className="lg:col-span-2 space-y-8">
+            <div className="bg-white rounded-2xl border border-neutral-200/80 p-8 md:p-10 shadow-sm">
+              <h3 className="text-2xl font-bold text-neutral-800 tracking-tight">
                 Informações de Contacto
               </h3>
 
-              <p className="mt-4 text-neutral-600 leading-8">
+              <p className="mt-3 text-neutral-500 leading-relaxed font-medium">
                 Utilize qualquer um dos canais abaixo ou envie-nos uma mensagem
-                através do formulário.
+                através do formulário ao lado.
               </p>
 
-              <div className="mt-10 space-y-8">
-                <div className="flex gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-500 flex items-center justify-center shrink-0">
-                    <i className="fa-solid fa-location-dot"></i>
+              <div className="mt-10 space-y-6">
+                {/* Item: Morada */}
+                <div className="group flex gap-5 items-start p-2 rounded-xl transition-colors duration-300 hover:bg-neutral-50">
+                  <div className="w-12 h-12 rounded-xl border border-neutral-200 bg-white text-orange-500 flex items-center justify-center shrink-0 shadow-xs group-hover:border-orange-200 transition-colors duration-300">
+                    <i className="fa-solid fa-location-dot text-base"></i>
                   </div>
-
                   <div>
-                    <h4 className="font-bold text-neutral-900">Morada</h4>
-
-                    <p className="mt-2 text-neutral-600 leading-7">
+                    <h4 className="font-bold text-neutral-700 text-sm uppercase tracking-wider">
+                      Morada
+                    </h4>
+                    <p className="mt-1 text-neutral-600 font-medium leading-relaxed">
                       Luanda, Angola
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-500 flex items-center justify-center shrink-0">
-                    <i className="fa-solid fa-phone"></i>
+                {/* Item: Telefone */}
+                <div className="group flex gap-5 items-start p-2 rounded-xl transition-colors duration-300 hover:bg-neutral-50">
+                  <div className="w-12 h-12 rounded-xl border border-neutral-200 bg-white text-orange-500 flex items-center justify-center shrink-0 shadow-xs group-hover:border-orange-200 transition-colors duration-300">
+                    <i className="fa-solid fa-phone text-base"></i>
                   </div>
-
                   <div>
-                    <h4 className="font-bold text-neutral-900">Telefone</h4>
-
-                    <p className="mt-2 text-neutral-600">+244 9XX XXX XXX</p>
+                    <h4 className="font-bold text-neutral-700 text-sm uppercase tracking-wider">
+                      Telefone
+                    </h4>
+                    <p className="mt-1 text-neutral-600 font-medium">
+                      +244 9XX XXX XXX
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-500 flex items-center justify-center shrink-0">
-                    <i className="fa-solid fa-envelope"></i>
+                {/* Item: Email */}
+                <div className="group flex gap-5 items-start p-2 rounded-xl transition-colors duration-300 hover:bg-neutral-50">
+                  <div className="w-12 h-12 rounded-xl border border-neutral-200 bg-white text-orange-500 flex items-center justify-center shrink-0 shadow-xs group-hover:border-orange-200 transition-colors duration-300">
+                    <i className="fa-solid fa-envelope text-base"></i>
                   </div>
-
                   <div>
-                    <h4 className="font-bold text-neutral-900">Email</h4>
-
-                    <p className="mt-2 text-neutral-600">contacto@nwayami.ao</p>
+                    <h4 className="font-bold text-neutral-700 text-sm uppercase tracking-wider">
+                      Email
+                    </h4>
+                    <p className="mt-1 text-neutral-600 font-medium break-all">
+                      contacto@nwayami.ao
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-500 flex items-center justify-center shrink-0">
-                    <i className="fa-solid fa-clock"></i>
+                {/* Item: Horário */}
+                <div className="group flex gap-5 items-start p-2 rounded-xl transition-colors duration-300 hover:bg-neutral-50">
+                  <div className="w-12 h-12 rounded-xl border border-neutral-200 bg-white text-orange-500 flex items-center justify-center shrink-0 shadow-xs group-hover:border-orange-200 transition-colors duration-300">
+                    <i className="fa-solid fa-clock text-base"></i>
                   </div>
-
                   <div>
-                    <h4 className="font-bold text-neutral-900">Horário</h4>
-
-                    <p className="mt-2 text-neutral-600 leading-7">
-                      Segunda a Sexta
-                      <br />
-                      08:00 - 17:00
+                    <h4 className="font-bold text-neutral-700 text-sm uppercase tracking-wider">
+                      Horário de Atendimento
+                    </h4>
+                    <p className="mt-1 text-neutral-600 font-medium leading-relaxed">
+                      Segunda a Sexta — 08:00 às 17:00
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Redes */}
-
-              <div className="mt-12 pt-8 border-t border-neutral-200">
-                <h4 className="font-bold text-neutral-900 mb-5">
-                  Redes Sociais
+              {/* Redes Sociais */}
+              <div className="mt-10 pt-8 border-t border-neutral-200">
+                <h4 className="font-bold text-neutral-700 text-sm uppercase tracking-wider mb-4">
+                  Siga-nos nas Redes
                 </h4>
 
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   {["facebook-f", "instagram", "linkedin-in", "whatsapp"].map(
                     (icon) => (
                       <a
                         key={icon}
                         href="#"
-                        className="w-12 h-12 rounded-xl border border-neutral-200 flex items-center justify-center text-neutral-600 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
+                        className="w-11 h-11 rounded-lg border border-neutral-200 bg-white flex items-center justify-center text-neutral-500 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-xs"
                       >
-                        <i className={`fa-brands fa-${icon}`}></i>
+                        <i className={`fa-brands fa-${icon} text-sm`}></i>
                       </a>
                     ),
                   )}
@@ -114,49 +117,60 @@ export default function Formulario() {
             </div>
           </div>
 
-          {/* Formulário */}
-
+          {/* Painel do Formulário */}
           <div className="lg:col-span-3">
-            <form className="bg-white rounded-3xl border border-neutral-200 p-10">
+            <form className="bg-white rounded-2xl border border-neutral-200/80 p-8 md:p-10 shadow-sm space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Nome completo"
-                  className="h-14 px-5 rounded-xl border border-neutral-200 outline-none focus:border-orange-500 transition"
-                />
+                <div className="space-y-2">
+                  <input
+                    type="text"
+                    placeholder="Nome completo"
+                    className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
+                  />
+                </div>
 
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="h-14 px-5 rounded-xl border border-neutral-200 outline-none focus:border-orange-500 transition"
-                />
+                <div className="space-y-2">
+                  <input
+                    type="email"
+                    placeholder="E-mail profissional"
+                    className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
+                  />
+                </div>
 
-                <input
-                  type="tel"
-                  placeholder="Telefone"
-                  className="h-14 px-5 rounded-xl border border-neutral-200 outline-none focus:border-orange-500 transition"
-                />
+                <div className="space-y-2">
+                  <input
+                    type="tel"
+                    placeholder="Telefone / WhatsApp"
+                    className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  placeholder="Assunto"
-                  className="h-14 px-5 rounded-xl border border-neutral-200 outline-none focus:border-orange-500 transition"
-                />
+                <div className="space-y-2">
+                  <input
+                    type="text"
+                    placeholder="Assunto do contacto"
+                    className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
+                  />
+                </div>
               </div>
 
-              <textarea
-                rows={7}
-                placeholder="Escreva a sua mensagem..."
-                className="w-full mt-6 p-5 rounded-xl border border-neutral-200 outline-none focus:border-orange-500 transition resize-none"
-              ></textarea>
+              <div className="space-y-2">
+                <textarea
+                  rows={6}
+                  placeholder="Descreva detalhadamente as necessidades do seu projeto ou questão..."
+                  className="w-full p-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400 resize-none leading-relaxed"
+                ></textarea>
+              </div>
 
-              <button
-                type="submit"
-                className="cursor-pointer mt-8 w-full inline-flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Enviar Mensagem
-                <i className="fa-solid fa-paper-plane"></i>
-              </button>
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="group cursor-pointer w-full inline-flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/10"
+                >
+                  Enviar Mensagem
+                  <i className="fa-solid fa-paper-plane text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5"></i>
+                </button>
+              </div>
             </form>
           </div>
         </div>
