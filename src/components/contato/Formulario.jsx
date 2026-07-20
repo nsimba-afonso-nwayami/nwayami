@@ -7,9 +7,9 @@ export default function Formulario() {
         {/* Cabeçalho */}
         <div className="max-w-3xl mx-auto text-center mb-24 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-            Entre em{" "}
+            Entre em
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              contacto connosco.
+              contacto connosco
             </span>
           </h2>
 

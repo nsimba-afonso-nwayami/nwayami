@@ -19,19 +19,19 @@ export default function Hero() {
     {
       image: heroBg1,
       title: "Construímos projetos que",
-      titleHighlight: "transformam o futuro.",
+      titleHighlight: "transformam o futuro",
       desc: "Soluções completas em engenharia de grande porte, infraestrutura e construção civil com o selo de excelência Nwayami."
     },
     {
       image: heroBg2,
       title: "Rigor técnico, precisão",
-      titleHighlight: "e máxima segurança.",
+      titleHighlight: "e máxima segurança",
       desc: "Do planejamento à entrega: fiscalização atenta, reabilitação inteligente e consultoria especializada para o mercado corporativo."
     },
     {
       image: heroBg3,
       title: "Sua visão de engenharia",
-      titleHighlight: "materializada com maestria.",
+      titleHighlight: "materializada com maestria",
       desc: "Garantimos o cumprimento rigoroso de prazos e padrões de sustentabilidade, gerando valor real para cada metro quadrado."
     }
   ];
@@ -85,7 +85,7 @@ export default function Hero() {
 
                   {/* Título de Alto Impacto usando bold */}
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-50 leading-[1.15] tracking-tight">
-                    {slide.title}{" "}
+                    {slide.title}
                     <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 via-orange-600 to-amber-400">
                       {slide.titleHighlight}
                     </span>

@@ -45,7 +45,7 @@ export default function ComoExecutamos() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">
             Como executamos
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              cada projeto.
+              cada projeto
             </span>
           </h2>
 

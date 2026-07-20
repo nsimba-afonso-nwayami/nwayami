@@ -84,7 +84,7 @@ export default function Portfolio() {
           <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900">
             Projetos que demonstram
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              a nossa experiência.
+              a nossa experiência
             </span>
           </h2>
 

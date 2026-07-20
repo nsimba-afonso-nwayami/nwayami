@@ -97,7 +97,7 @@ export default function NossosServicos() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
             Soluções completas para todas as fases
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              do seu projeto.
+              do seu projeto
             </span>
           </h2>
 

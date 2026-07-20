@@ -38,7 +38,7 @@ export default function NossoProcesso() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
             Um processo estruturado para
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              garantir resultados consistentes.
+              garantir resultados consistentes
             </span>
           </h2>
 

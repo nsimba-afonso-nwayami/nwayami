@@ -39,7 +39,7 @@ export default function Compromissos() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
             Os compromissos que orientam
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              cada decisão que tomamos.
+              cada decisão que tomamos
             </span>
           </h2>
 

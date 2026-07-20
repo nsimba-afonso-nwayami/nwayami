@@ -40,7 +40,7 @@ export default function Sobre() {
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15]">
                 Engenharia que transforma{" "}
                 <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-                  desafios em resultados.
+                  desafios em resultados
                 </span>
               </h2>
             </div>

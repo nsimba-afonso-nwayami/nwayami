@@ -50,7 +50,7 @@ export default function AreasAtuacao() {
           <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
             Soluções para diferentes setores
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              da engenharia e construção.
+              da engenharia e construção
             </span>
           </h2>
 

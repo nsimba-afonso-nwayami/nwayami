@@ -51,7 +51,7 @@ export default function TiposDeProjetos() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">
             Áreas onde
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              criamos valor.
+              criamos valor
             </span>
           </h2>
 

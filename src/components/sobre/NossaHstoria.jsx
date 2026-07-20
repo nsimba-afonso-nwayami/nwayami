@@ -32,7 +32,7 @@ export default function NossaHistoria() {
             <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
               Construindo soluções que
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-                geram confiança.
+                geram confiança
               </span>
             </h2>
 

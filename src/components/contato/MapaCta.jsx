@@ -14,7 +14,7 @@ export default function MapaCta() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">
             Estamos prontos para
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              receber o seu projeto.
+              receber o seu projeto
             </span>
           </h2>
 

@@ -9,7 +9,7 @@ export default function BannerProjetos() {
       image={bannerProjetos}
       currentPage="Projetos"
       title="Projetos que refletem"
-      highlight="qualidade e inovação."
+      highlight="qualidade e inovação"
       description="Conheça alguns dos projetos que demonstram a nossa experiência, rigor técnico e compromisso com a excelência."
     />
   );

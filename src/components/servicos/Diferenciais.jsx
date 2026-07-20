@@ -49,7 +49,7 @@ export default function Diferenciais() {
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">
             Diferenciais que fazem
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
-              a diferença em cada projeto.
+              a diferença em cada projeto
             </span>
           </h2>
 

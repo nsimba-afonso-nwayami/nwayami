@@ -9,7 +9,7 @@ export default function BannerServicos() {
       image={bannerServicos}
       currentPage="Serviços"
       title="Soluções completas em"
-      highlight="engenharia e construção."
+      highlight="engenharia e construção"
       description="Serviços de engenharia, construção civil, manutenção predial e consultoria, executados com qualidade e rigor técnico."
     />
   );
