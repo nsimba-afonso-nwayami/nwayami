@@ -61,7 +61,7 @@ export default function Header() {
           {/* Menu Único (Desliza no mobile, fixa-se no desktop) */}
           <nav
             className={`
-              /* Estrutura Mobile (Painel Lateral Oculto por Padrão) */
+              /* Estrutura Mobile (Painel Lateral) */
               fixed right-0 top-0 w-full h-screen bg-neutral-900 border-l border-neutral-800 p-8 pt-32 
               flex flex-col gap-6 shadow-2xl transition-transform duration-500 ease-out transform z-40
               ${menuOpen ? "translate-x-0" : "translate-x-full"}
@@ -89,16 +89,13 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* CTA Integrado (Fica no rodapé do menu no mobile e alinhado na barra no desktop) */}
-            <div className="mt-auto pt-8 lg:mt-0 lg:pt-0">
-              <Link
-                href="/contato"
-                onClick={() => setMenuOpen(false)}
-                className="w-full lg:w-auto inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-neutral-50 px-6 py-4 lg:py-3 rounded-md font-bold text-base lg:text-sm tracking-wide transition-all duration-300 shadow-md shadow-orange-500/5 hover:-translate-y-0.5"
-              >
-                Solicitar Orçamento
-              </Link>
-            </div>
+            {/* CTA — Exclusivo para Desktop (Desaparece a 100% no mobile) */}
+            <Link
+              href="/contato"
+              className="hidden lg:inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-neutral-50 px-6 py-3 rounded-md font-bold text-sm tracking-wide transition-all duration-300 shadow-md shadow-orange-500/5 hover:-translate-y-0.5"
+            >
+              Solicitar Orçamento
+            </Link>
           </nav>
 
           {/* Botão Hamburger (Apenas Mobile) */}
