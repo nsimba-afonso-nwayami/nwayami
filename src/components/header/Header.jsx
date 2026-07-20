@@ -61,7 +61,7 @@ export default function Header() {
           {/* Menu Único (Desliza no mobile, fixa-se no desktop) */}
           <nav
             className={`
-              /* Estrutura Mobile */
+              /* Estrutura Mobile (Painel Lateral Oculto por Padrão) */
               fixed right-0 top-0 w-full h-screen bg-neutral-900 border-l border-neutral-800 p-8 pt-32 
               flex flex-col gap-6 shadow-2xl transition-transform duration-500 ease-out transform z-40
               ${menuOpen ? "translate-x-0" : "translate-x-full"}
@@ -71,7 +71,7 @@ export default function Header() {
               lg:flex-row lg:items-center lg:gap-8 lg:shadow-none lg:translate-x-0 lg:z-auto
             `}
           >
-            {/* Header interno visível apenas no mobile */}
+            {/* Cabeçalho interno do painel - apenas mobile */}
             <div className="flex flex-col gap-2 border-b border-neutral-800 pb-6 lg:hidden">
               <span className="text-orange-500 font-bold uppercase tracking-wider text-xs">
                 Menu de Navegação
@@ -89,7 +89,7 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* CTA único adaptável */}
+            {/* CTA Integrado (Fica no rodapé do menu no mobile e alinhado na barra no desktop) */}
             <div className="mt-auto pt-8 lg:mt-0 lg:pt-0">
               <Link
                 href="/contato"
@@ -101,7 +101,7 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Botão Hamburger com Ícones do FontAwesome */}
+          {/* Botão Hamburger (Apenas Mobile) */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center text-xl text-neutral-50 hover:text-orange-500 focus:outline-none transition-colors duration-300"
@@ -109,10 +109,11 @@ export default function Header() {
           >
             <i className={`fa-solid ${menuOpen ? "fa-xmark text-orange-500" : "fa-bars"}`}></i>
           </button>
+
         </div>
       </header>
 
-      {/* Backdrop sutil apenas para o ecrã mobile quando aberto */}
+      {/* Backdrop de fecho sutil para o mobile */}
       <div
         onClick={() => setMenuOpen(false)}
         className={`fixed inset-0 bg-neutral-950/60 backdrop-blur-xs z-30 lg:hidden transition-opacity duration-500 ${
