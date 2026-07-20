@@ -31,11 +31,9 @@ export default function ComoTrabalhamos() {
   return (
     <section className="py-28 bg-neutral-50">
       <div className="max-w-5xl mx-auto px-6">
-
         {/* Cabeçalho */}
 
         <div className="text-center mb-24">
-
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
             Como desenvolvemos
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
@@ -47,58 +45,66 @@ export default function ComoTrabalhamos() {
             Cada serviço segue um processo estruturado que garante organização,
             eficiência e excelência desde o primeiro contacto até à entrega.
           </p>
-
         </div>
 
         {/* Timeline */}
 
         <div className="relative">
+          {/* Linha central */}
 
-          {/* Linha */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-neutral-300"></div>
 
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-neutral-300"></div>
+          <div className="space-y-16">
+            {etapas.map((item, index) => {
+              const left = index % 2 === 0;
 
-          <div className="space-y-14">
+              return (
+                <div
+                  key={item.title}
+                  className="relative grid lg:grid-cols-2 gap-10 items-center"
+                >
+                  {/* Card */}
 
-            {etapas.map((item) => (
+                  <div
+                    className={`${left ? "lg:pr-16" : "lg:order-2 lg:pl-16"}`}
+                  >
+                    <div className="bg-white border border-neutral-200 rounded-2xl p-8 hover:border-orange-500 transition-all duration-300">
+                      <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 text-2xl">
+                        <i className={item.icon}></i>
+                      </div>
 
-              <div
-                key={item.title}
-                className="relative flex gap-8"
-              >
+                      <h3 className="mt-6 text-2xl font-bold text-neutral-900">
+                        {item.title}
+                      </h3>
 
-                {/* Ícone */}
+                      <p className="mt-4 text-neutral-600 leading-8">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
 
-                <div className="relative z-10 w-16 h-16 rounded-full bg-white border border-orange-500 flex items-center justify-center shrink-0">
+                  {/* Espaço vazio */}
 
-                  <i
-                    className={`${item.icon} text-2xl text-orange-500`}
-                  ></i>
+                  <div className="hidden lg:block"></div>
 
+                  {/* Nó da Timeline */}
+
+                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      <div className="w-5 h-5 rounded-full bg-orange-500 border-4 border-white shadow"></div>
+
+                      <div
+                        className={`absolute top-1/2 h-px bg-orange-300 ${
+                          left ? "right-5 w-16" : "left-5 w-16"
+                        }`}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Card */}
-
-                <div className="flex-1 bg-white border border-neutral-200 rounded-2xl p-8 hover:border-orange-500 transition-all duration-300">
-
-                  <h3 className="text-2xl font-bold text-neutral-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 text-neutral-600 leading-8">
-                    {item.description}
-                  </p>
-
-                </div>
-
-              </div>
-
-            ))}
-
+              );
+            })}
           </div>
-
         </div>
-
       </div>
     </section>
   );
