@@ -4,10 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 
 import servico1 from "@/assets/img/servico1.jpg";
 import servico2 from "@/assets/img/servico2.jpg";
@@ -84,7 +82,6 @@ export default function Projetos() {
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={1.2}
-          navigation
           loop
           speed={1500}
           grabCursor={true}
