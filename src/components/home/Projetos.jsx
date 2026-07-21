@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
@@ -14,7 +15,7 @@ import servico4 from "@/assets/img/servico1.jpg";
 import servico5 from "@/assets/img/servico2.jpg";
 import servico6 from "@/assets/img/servico3.jpg";
 
-// LightGallery (assumindo que já tens instalado)
+// LightGallery
 import LightGallery from "lightgallery/react";
 
 import lgZoom from "lightgallery/plugins/zoom";
@@ -79,7 +80,7 @@ export default function Projetos() {
 
         {/* Swiper */}
         <Swiper
-          modules={[Navigation]}
+          modules={[Autoplay]}
           spaceBetween={30}
           slidesPerView={1.2}
           loop
