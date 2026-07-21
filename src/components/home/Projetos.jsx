@@ -119,11 +119,6 @@ export default function Projetos() {
 
                     {/* Overlay hover */}
                     <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/40 transition"></div>
-
-                    {/* badge */}
-                    <div className="absolute top-4 left-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold">
-                      Projeto {index + 1}
-                    </div>
                   </div>
 
                   {/* Content */}
@@ -135,11 +130,6 @@ export default function Projetos() {
                     <p className="mt-3 text-neutral-600 leading-7 text-sm">
                       {project.desc}
                     </p>
-
-                    <div className="mt-5 flex items-center gap-2 text-orange-500 font-semibold text-sm">
-                      Ver detalhes
-                      <i className="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
-                    </div>
                   </div>
                 </a>
               </LightGallery>
