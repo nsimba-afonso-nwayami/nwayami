@@ -1,6 +1,49 @@
 "use client";
 
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { contactSchema } from "@/validations/contactSchema";
+import toast from "react-hot-toast";
+
 export default function Formulario() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: yupResolver(contactSchema),
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      const mensagem = `
+        NOVO PEDIDO DE CONTACTO
+
+        Nome: ${data.name}
+        Email: ${data.email}
+        Telefone: ${data.phone}
+        Assunto: ${data.subject}
+
+        Mensagem:
+        ${data.message}
+      `;
+
+      const numero = "244924034804";
+
+      toast.success("A redirecionar para o WhatsApp...");
+
+      window.open(
+        `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+        "_blank",
+      );
+
+      reset();
+    } catch (error) {
+      toast.error("Não foi possível abrir o WhatsApp.");
+    }
+  };
+
   return (
     <section id="formulario" className="py-28 bg-neutral-50 text-neutral-900">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -119,38 +162,67 @@ export default function Formulario() {
 
           {/* Painel do Formulário */}
           <div className="lg:col-span-3">
-            <form className="bg-white rounded-2xl border border-neutral-200/80 p-8 md:p-10 shadow-sm space-y-6">
+            <form
+              onSubmit={handleSubmit(onSubmit, () =>
+                toast.error("Preencha corretamente os campos obrigatórios."),
+              )}
+              className="bg-white rounded-2xl border border-neutral-200/80 p-8 md:p-10 shadow-sm space-y-6"
+            >
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <input
                     type="text"
                     placeholder="Nome completo"
+                    {...register("name")}
                     className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
                   <input
                     type="email"
                     placeholder="E-mail profissional"
+                    {...register("email")}
                     className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
                   <input
                     type="tel"
                     placeholder="Telefone / WhatsApp"
+                    {...register("phone")}
                     className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
                   />
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm">
+                      {errors.phone.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
                   <input
                     type="text"
                     placeholder="Assunto do contacto"
+                    {...register("subject")}
                     className="w-full h-14 px-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400"
                   />
+                  {errors.subject && (
+                    <p className="text-red-500 text-sm">
+                      {errors.subject.message}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -158,17 +230,32 @@ export default function Formulario() {
                 <textarea
                   rows={6}
                   placeholder="Descreva detalhadamente as necessidades do seu projeto ou questão..."
+                  {...register("message")}
                   className="w-full p-5 rounded-xl border border-neutral-200 bg-neutral-50/50 outline-none focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-medium transition-all duration-200 text-neutral-800 text-sm placeholder:text-neutral-400 resize-none leading-relaxed"
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="group cursor-pointer w-full inline-flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/10"
+                  disabled={isSubmitting}
+                  className="group cursor-pointer w-full inline-flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 disabled:cursor-not-allowed text-white py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/10"
                 >
-                  Enviar Mensagem
-                  <i className="fa-solid fa-paper-plane text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5"></i>
+                  {isSubmitting ? (
+                    <>
+                      <i className="fa-solid fa-spinner fa-spin"></i>A enviar...
+                    </>
+                  ) : (
+                    <>
+                      Enviar Mensagem
+                      <i className="fa-solid fa-paper-plane text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5"></i>
+                    </>
+                  )}
                 </button>
               </div>
             </form>
