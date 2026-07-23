@@ -76,36 +76,33 @@ export default function Portfolio() {
       : projetos.filter((item) => item.category === categoria);
 
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 bg-white border-b border-neutral-200/80">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900">
-            Projetos que demonstram
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Projetos que demonstram{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               a nossa experiência
             </span>
           </h2>
 
-          <p className="mt-8 text-neutral-600 leading-8">
-            Conheça alguns dos projetos desenvolvidos pela Nwayami nas áreas de
-            construção civil, manutenção predial e reabilitação.
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Conheça alguns dos projetos desenvolvidos nas áreas de construção
+            civil, manutenção predial e reabilitação.
           </p>
         </div>
 
-        {/* Tabs */}
-
-        <div className="flex flex-wrap justify-center gap-4 mt-14">
+        {/* Filtros em Pílula */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12 sm:mb-14">
           {categorias.map((item) => (
             <button
               key={item}
               onClick={() => setCategoria(item)}
-              className={`cursor-pointer px-6 py-3 rounded-full font-semibold transition-all duration-300
-              ${
+              className={`cursor-pointer px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 categoria === item
-                  ? "bg-orange-500 text-white"
-                  : "bg-neutral-100 text-neutral-700 hover:bg-orange-100"
+                  ? "bg-orange-500 text-white shadow-xs shadow-orange-500/20"
+                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200/70 hover:text-neutral-900"
               }`}
             >
               {item}
@@ -113,53 +110,62 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Grid */}
-
+        {/* Grid com LightGallery */}
         <LightGallery
           key={categoria}
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
           selector=".gallery-item"
         >
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {filtered.map((item) => (
               <a
                 key={item.title}
                 href={item.image.src}
-                className="gallery-item group block overflow-hidden rounded-2xl bg-white border border-neutral-200"
+                className="gallery-item group bg-white rounded-2xl border border-neutral-200/80 hover:border-orange-500/40 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
               >
-                <div className="relative h-80 overflow-hidden">
+                {/* Contentor da Imagem */}
+                <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-neutral-900">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100"
                   />
 
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
-                      <i className="fa-solid fa-plus text-orange-500 text-xl"></i>
+                  {/* Gradient Overlay Sutil */}
+                  <div className="absolute inset-0 bg-linear-to-t from-neutral-950/60 via-transparent to-black/20" />
+
+                  {/* Tag de Categoria */}
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-orange-500 font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 shadow-xs">
+                    {item.category}
+                  </div>
+
+                  {/* Botão de Expandir no Hover */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-950/20">
+                    <div className="w-11 h-11 rounded-xl bg-white/90 backdrop-blur-md shadow-md flex items-center justify-center text-orange-500 text-base border border-white/20 transition-transform duration-300 group-hover:scale-110">
+                      <i className="fa-solid fa-plus"></i>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-7">
-                  <span className="text-xs uppercase tracking-[3px] font-bold text-orange-500">
-                    {item.category}
-                  </span>
+                {/* Corpo do Cartão */}
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
+                      {item.title}
+                    </h3>
 
-                  <h3 className="mt-3 text-2xl font-bold text-neutral-900">
-                    {item.title}
-                  </h3>
-
-                  <div className="flex items-center gap-2 mt-4 text-neutral-500">
-                    <i className="fa-solid fa-location-dot text-orange-500"></i>
-                    {item.location}
+                    <p className="mt-2 text-neutral-600 text-xs sm:text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
 
-                  <p className="mt-5 text-neutral-600 leading-7">
-                    {item.description}
-                  </p>
+                  {/* Rodapé do Cartão */}
+                  <div className="mt-5 pt-4 border-t border-neutral-100 flex items-center gap-2 text-xs font-medium text-neutral-500">
+                    <i className="fa-solid fa-location-dot text-orange-500 text-sm"></i>
+                    <span>{item.location}</span>
+                  </div>
                 </div>
               </a>
             ))}

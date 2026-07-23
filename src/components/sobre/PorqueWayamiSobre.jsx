@@ -41,68 +41,51 @@ export default function PorqueWayamiSobre() {
   ];
 
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-20 items-start">
-
-          {/* Texto */}
-
-          <div className="sticky top-28">
-            <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-              Porque empresas e clientes
-              <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Coluna de Texto Sticky */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+              Porque empresas e clientes{" "}
+              <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
                 confiam na Nwayami
               </span>
             </h2>
 
-            <p className="mt-8 text-lg leading-8 text-neutral-600">
+            <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed">
               A nossa atuação baseia-se na excelência técnica, transparência e
               compromisso. Trabalhamos para entregar projetos que unem
               qualidade, inovação e confiança em cada detalhe.
             </p>
-
           </div>
 
-          {/* Lista */}
-
-          <div className="space-y-5">
-
+          {/* Lista de Diferenciais */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             {diferenciais.map((item) => (
-
               <div
                 key={item.title}
-                className="group flex gap-6 p-6 rounded-2xl border border-neutral-200 hover:border-orange-500 transition-all duration-300"
+                className="group relative flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-neutral-50/60 hover:bg-white border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
-
-                <div className="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500 transition-colors">
-
-                  <i
-                    className={`${item.icon} text-xl text-orange-500 group-hover:text-white transition-colors`}
-                  ></i>
-
+                {/* Ícone */}
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center text-base sm:text-lg group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 shadow-xs shrink-0 mt-0.5">
+                  <i className={item.icon}></i>
                 </div>
 
+                {/* Conteúdo do Cartão */}
                 <div>
-
-                  <h3 className="text-xl font-bold text-neutral-900">
+                  <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 text-neutral-600 leading-7">
+                  <p className="mt-1 sm:mt-1.5 text-neutral-600 text-xs sm:text-sm leading-relaxed">
                     {item.description}
                   </p>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

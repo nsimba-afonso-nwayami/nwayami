@@ -50,7 +50,7 @@ export default function Formulario() {
         {/* Cabeçalho */}
         <div className="max-w-3xl mx-auto text-center mb-24 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-            Entre em
+            Entre em{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
               contacto connosco
             </span>
@@ -168,6 +168,16 @@ export default function Formulario() {
               )}
               className="bg-white rounded-2xl border border-neutral-200/80 p-8 md:p-10 shadow-sm space-y-6"
             >
+              {/* Título e Subtítulo do Formulário */}
+              <div className="border-b border-neutral-100 pb-4">
+                <h3 className="text-2xl text-center font-bold text-neutral-800 tracking-tight">
+                  Envie uma mensagem
+                </h3>
+                <p className="mt-1.5 text-neutral-500 font-medium text-sm leading-relaxed">
+                  Preencha os seus dados abaixo e entraremos em contacto o mais breve possível.
+                </p>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <input

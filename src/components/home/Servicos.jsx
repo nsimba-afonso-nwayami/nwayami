@@ -43,48 +43,50 @@ export default function Servicos() {
   ];
 
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-24">
-          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Soluções completas para
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        {/* Cabeçalho */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Soluções completas para{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               construir, manter e evoluir
             </span>
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-neutral-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Da construção civil à manutenção predial, oferecemos soluções
             integradas que garantem qualidade, segurança e desempenho em cada
             etapa do seu projeto.
           </p>
         </div>
 
-        <div>
-          {services.map((service, index) => (
+        {/* Lista de Serviços */}
+        <div className="border-t border-neutral-200">
+          {services.map((service) => (
             <Link
               key={service.title}
               href="/servicos"
-              className="group flex flex-col lg:flex-row lg:items-center justify-between gap-8 py-10 border-b border-neutral-200 hover:border-orange-500 transition-all"
+              className="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-7 border-b border-neutral-200 hover:border-orange-500 transition-colors duration-300"
             >
-              <div className="flex gap-8">
+              <div className="flex gap-6">
                 <div>
-                  <h3 className="text-3xl font-bold text-neutral-900 group-hover:text-orange-500 transition">
+                  <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 max-w-2xl text-neutral-600 leading-8">
+                  <p className="mt-2 max-w-2xl text-neutral-600 text-sm sm:text-base leading-relaxed">
                     {service.description}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4 self-end lg:self-center">
                 <i
-                  className={`${service.icon} text-3xl text-orange-500 opacity-0 group-hover:opacity-100 transition`}
+                  className={`${service.icon} text-2xl text-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 ></i>
 
-                <i className="fa-solid fa-arrow-right text-2xl text-neutral-400 group-hover:text-orange-500 group-hover:translate-x-2 transition-all"></i>
+                <i className="fa-solid fa-arrow-right text-lg text-neutral-400 group-hover:text-orange-500 group-hover:translate-x-1.5 transition-all duration-300"></i>
               </div>
             </Link>
           ))}

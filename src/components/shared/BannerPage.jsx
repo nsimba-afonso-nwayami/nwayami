@@ -22,9 +22,8 @@ export default function BannerPage({
       {/* Conteúdo */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-20 lg:pt-24">
         <div className="max-w-3xl">
-
           {/* Breadcrumb */}
-          <div className="flex items-center gap-3 text-sm text-neutral-300 mb-6">
+          <div className="flex items-center gap-3 text-sm text-neutral-300 mb-4">
             <Link
               href="/"
               className="hover:text-orange-500 transition-colors duration-300"
@@ -34,25 +33,21 @@ export default function BannerPage({
 
             <i className="fa-solid fa-angle-right text-xs text-orange-500"></i>
 
-            <span className="text-white">
-              {currentPage}
-            </span>
+            <span className="text-white">{currentPage}</span>
           </div>
 
-          {/* Título */}
-          <h1 className="mt-6 text-5xl lg:text-6xl font-bold text-white leading-tight">
-            {title}
-
+          {/* Título Reduzido */}
+          <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+            {title}{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
               {highlight}
             </span>
           </h1>
 
           {/* Texto */}
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-300">
+          <p className="mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-300">
             {description}
           </p>
-
         </div>
       </div>
 

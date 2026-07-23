@@ -60,29 +60,29 @@ export default function Projetos() {
   ];
 
   return (
-    <section className="py-28 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
 
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Projetos que definem
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Projetos que definem{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               a nossa engenharia
             </span>
           </h2>
 
-          <p className="mt-8 text-neutral-600 text-lg leading-8">
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Cada projeto representa o nosso compromisso com qualidade,
             inovação e execução rigorosa em engenharia e construção civil.
           </p>
         </div>
 
-        {/* Swiper */}
+        {/* Swiper Ajustado */}
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1.2}
+          spaceBetween={20}
+          slidesPerView={1.3}
           loop
           speed={1500}
           grabCursor={true}
@@ -91,8 +91,9 @@ export default function Projetos() {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            540: { slidesPerView: 2.2, spaceBetween: 20 },
+            768: { slidesPerView: 3.2, spaceBetween: 24 },
+            1100: { slidesPerView: 4, spaceBetween: 24 },
           }}
         >
           {projects.map((project, index) => (
@@ -104,28 +105,28 @@ export default function Projetos() {
               >
                 <a
                   href={project.image.src}
-                  className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+                  className="group block bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 border border-neutral-200/80 hover:-translate-y-1 h-full"
                 >
-                  {/* Image */}
-                  <div className="relative h-72 overflow-hidden">
+                  {/* Image com altura reduzida para proporcionalidade */}
+                  <div className="relative h-48 sm:h-52 overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
 
                     {/* Overlay hover */}
-                    <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/40 transition"></div>
+                    <div className="absolute inset-0 bg-neutral-950/10 group-hover:bg-neutral-950/25 transition-colors duration-300"></div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-neutral-900 group-hover:text-orange-500 transition">
+                  <div className="p-4 sm:p-5">
+                    <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300 line-clamp-1">
                       {project.title}
                     </h3>
 
-                    <p className="mt-3 text-neutral-600 leading-7 text-sm">
+                    <p className="mt-1.5 text-neutral-600 leading-relaxed text-xs sm:text-sm line-clamp-3">
                       {project.desc}
                     </p>
                   </div>
@@ -136,13 +137,13 @@ export default function Projetos() {
         </Swiper>
 
         {/* CTA */}
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center mt-12 sm:mt-14">
           <Link
             href="/projetos"
-            className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2.5 bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-md font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 shadow-xs"
           >
             Ver Todos os Projetos
-            <i className="fa-solid fa-arrow-right"></i>
+            <i className="fa-solid fa-arrow-right text-xs"></i>
           </Link>
         </div>
 

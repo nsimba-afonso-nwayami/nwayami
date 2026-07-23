@@ -29,76 +29,81 @@ export default function ComoTrabalhamos() {
   ];
 
   return (
-    <section className="py-28 bg-neutral-50">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-24 bg-neutral-50 border-b border-neutral-200/80">
+      <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-
-        <div className="text-center mb-24">
-          <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Como desenvolvemos
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Como desenvolvemos{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               cada projeto
             </span>
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-neutral-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Cada serviço segue um processo estruturado que garante organização,
             eficiência e excelência desde o primeiro contacto até à entrega.
           </p>
         </div>
 
         {/* Timeline */}
-
         <div className="relative">
-          {/* Linha central */}
+          {/* Linha Central Vertical para Desktop */}
+          <div className="hidden lg:block absolute left-1/2 top-6 bottom-6 -translate-x-1/2 w-0.5 bg-neutral-200" />
 
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-neutral-300"></div>
+          {/* Linha Lateral Vertical para Mobile e Tablet */}
+          <div className="lg:hidden absolute left-5 top-6 bottom-6 w-0.5 bg-neutral-200" />
 
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12">
             {etapas.map((item, index) => {
               const left = index % 2 === 0;
 
               return (
                 <div
                   key={item.title}
-                  className="relative grid lg:grid-cols-2 gap-10 items-center"
+                  className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center pl-10 lg:pl-0"
                 >
-                  {/* Card */}
+                  {/* Nó de Ancoragem para Mobile */}
+                  <div className="lg:hidden absolute left-5 top-8 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white border-2 border-orange-500 z-10" />
 
+                  {/* Cartão de Conteúdo */}
                   <div
-                    className={`${left ? "lg:pr-16" : "lg:order-2 lg:pl-16"}`}
+                    className={`${
+                      left
+                        ? "lg:pr-12 lg:text-right"
+                        : "lg:order-2 lg:pl-12 lg:text-left"
+                    }`}
                   >
-                    <div className="bg-white border border-neutral-200 rounded-2xl p-8 hover:border-orange-500 transition-all duration-300">
-                      <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 text-2xl">
-                        <i className={item.icon}></i>
+                    <div className="group bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-7 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative">
+                      {/* Ícone Alinhado */}
+                      <div
+                        className={`flex items-center mb-4 ${
+                          left ? "lg:justify-end" : "justify-start"
+                        }`}
+                      >
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-lg sm:text-xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-xs shrink-0">
+                          <i className={item.icon}></i>
+                        </div>
                       </div>
 
-                      <h3 className="mt-6 text-2xl font-bold text-neutral-900">
+                      {/* Título */}
+                      <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
                         {item.title}
                       </h3>
 
-                      <p className="mt-4 text-neutral-600 leading-8">
+                      {/* Descrição */}
+                      <p className="mt-2 text-neutral-600 text-xs sm:text-sm leading-relaxed">
                         {item.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* Espaço vazio */}
+                  {/* Espaço para manter a alternância no Desktop */}
+                  <div className="hidden lg:block" />
 
-                  <div className="hidden lg:block"></div>
-
-                  {/* Nó da Timeline */}
-
-                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative">
-                      <div className="w-5 h-5 rounded-full bg-orange-500 border-4 border-white shadow"></div>
-
-                      <div
-                        className={`absolute top-1/2 h-px bg-orange-300 ${
-                          left ? "right-5 w-16" : "left-5 w-16"
-                        }`}
-                      ></div>
-                    </div>
+                  {/* Nó Central da Timeline no Desktop */}
+                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center z-10">
+                    <div className="w-4 h-4 rounded-full bg-white border-4 border-orange-500 shadow-xs transition-transform duration-300 group-hover:scale-125" />
                   </div>
                 </div>
               );

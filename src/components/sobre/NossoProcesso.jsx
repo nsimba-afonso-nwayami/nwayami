@@ -29,20 +29,18 @@ export default function NossoProcesso() {
   ];
 
   return (
-    <section className="py-28 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6">
-
+    <section className="py-24 bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-
-        <div className="max-w-4xl mx-auto text-center mb-24">
-          <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Um processo estruturado para
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Um processo estruturado para{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               garantir resultados consistentes
             </span>
           </h2>
 
-          <p className="mt-8 text-lg text-neutral-600 leading-8 max-w-3xl mx-auto">
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Cada projeto segue uma metodologia cuidadosamente planeada,
             assegurando qualidade, transparência e eficiência desde o primeiro
             contacto até à entrega final.
@@ -50,47 +48,38 @@ export default function NossoProcesso() {
         </div>
 
         {/* Timeline */}
+        <div className="relative">
+          {/* Linha Contínua de Conexão (Visível apenas em ecrãs grandes) */}
+          <div
+            className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-neutral-200 z-0"
+            aria-hidden="true"
+          />
 
-        <div className="grid lg:grid-cols-4 gap-10 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
+            {processo.map((item) => (
+              <div
+                key={item.title}
+                className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-white sm:bg-transparent border border-neutral-200/80 sm:border-transparent hover:bg-white hover:border-neutral-200/80 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* Ícone */}
+                <div className="relative mb-5 shrink-0">
+                  <div className="w-14 h-14 rounded-2xl bg-white border border-neutral-200/80 shadow-xs flex items-center justify-center text-orange-500 text-xl group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300">
+                    <i className={item.icon}></i>
+                  </div>
+                </div>
 
-          {processo.map((item, index) => (
+                {/* Conteúdo */}
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
+                  {item.title}
+                </h3>
 
-            <div
-              key={item.title}
-              className="relative text-center group"
-            >
-              {/* Linha */}
-
-              {index < processo.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-[58%] w-full h-px bg-neutral-300"></div>
-              )}
-
-              {/* Ícone */}
-
-              <div className="relative z-10 mx-auto w-16 h-16 rounded-full bg-white border border-neutral-200 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
-
-                <i
-                  className={`${item.icon} text-2xl text-orange-500 group-hover:text-white transition`}
-                ></i>
-
+                <p className="mt-2 text-neutral-600 text-xs sm:text-sm leading-relaxed max-w-xs">
+                  {item.description}
+                </p>
               </div>
-
-              {/* Conteúdo */}
-
-              <h3 className="mt-8 text-2xl font-bold text-neutral-900">
-                {item.title}
-              </h3>
-
-              <p className="mt-5 text-neutral-600 leading-7">
-                {item.description}
-              </p>
-
-            </div>
-
-          ))}
-
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );

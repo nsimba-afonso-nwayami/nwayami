@@ -50,9 +50,11 @@ export default function Header() {
             isScrolled ? "h-20" : "h-24"
           }`}
         >
-          
           {/* Logo Minimalista */}
-          <Link href="/" className="flex flex-col justify-center group relative z-50">
+          <Link
+            href="/"
+            className="flex flex-col justify-center group relative z-50"
+          >
             <h1 className="text-2xl font-bold text-neutral-50 tracking-tight leading-none transition-colors duration-300 group-hover:text-orange-500">
               Nwayami
             </h1>
@@ -104,9 +106,10 @@ export default function Header() {
             className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center text-xl text-neutral-50 hover:text-orange-500 focus:outline-none transition-colors duration-300"
             aria-label={menuOpen ? "Fechar Menu" : "Abrir Menu"}
           >
-            <i className={`fa-solid ${menuOpen ? "fa-xmark text-orange-500" : "fa-bars"}`}></i>
+            <i
+              className={`fa-solid ${menuOpen ? "fa-xmark text-orange-500" : "fa-bars"}`}
+            ></i>
           </button>
-
         </div>
       </header>
 
@@ -114,7 +117,9 @@ export default function Header() {
       <div
         onClick={() => setMenuOpen(false)}
         className={`fixed inset-0 bg-neutral-950/60 backdrop-blur-xs z-30 lg:hidden transition-opacity duration-500 ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+          menuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
         }`}
       />
     </>

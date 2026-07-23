@@ -29,69 +29,50 @@ export default function Compromissos() {
   ];
 
   return (
-    <section className="py-28 bg-neutral-50 border-b border-neutral-200">
-      <div className="max-w-7xl mx-auto px-6">
-
+    <section className="py-24 bg-neutral-50 border-b border-neutral-200/80">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-
-        <div className="max-w-4xl mx-auto text-center mb-20">
-
-          <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Os compromissos que orientam
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Os compromissos que orientam{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               cada decisão que tomamos
             </span>
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-neutral-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Mais do que executar projetos, assumimos o compromisso de atuar com
             responsabilidade, transparência e excelência técnica em todas as
-            as nossas intervenções.
+            nossas intervenções.
           </p>
-
         </div>
 
-        {/* Cards */}
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-
+        {/* Cards de Compromissos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {compromissos.map((item) => (
-
             <div
               key={item.title}
-              className="group relative bg-white border border-neutral-200 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-orange-500"
+              className="group relative flex flex-col overflow-hidden bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-7 hover:border-orange-500/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-
-              {/* Linha superior */}
-
-              <div className="absolute top-0 left-8 w-12 h-1 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-24"></div>
+              {/* Linha Accent Superior com Transição */}
+              <div className="absolute top-0 left-6 right-6 h-0.5 bg-neutral-200 group-hover:bg-orange-500 transition-colors duration-300" />
 
               {/* Ícone */}
-
-              <div className="mt-4 w-16 h-16 rounded-xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-
-                <i
-                  className={`${item.icon} text-2xl text-orange-500 group-hover:text-white transition-colors`}
-                ></i>
-
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-lg sm:text-xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-xs mt-2 shrink-0">
+                <i className={item.icon}></i>
               </div>
 
-              {/* Conteúdo */}
-
-              <h3 className="mt-8 text-2xl font-bold text-neutral-900">
+              {/* Conteúdo do Cartão */}
+              <h3 className="mt-5 text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
                 {item.title}
               </h3>
 
-              <p className="mt-5 text-neutral-600 leading-8">
+              <p className="mt-2 text-neutral-600 text-xs sm:text-sm leading-relaxed">
                 {item.description}
               </p>
-
             </div>
-
           ))}
-
         </div>
-
       </div>
     </section>
   );

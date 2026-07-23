@@ -23,39 +23,39 @@ export default function MissaoVisaoValores() {
   ];
 
   return (
-    <section className="py-28 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Os princípios que orientam
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Os princípios que orientam{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               cada projeto que executamos
             </span>
           </h2>
         </div>
 
-        {/* Conteúdo */}
-        <div className="space-y-8">
+        {/* Grelha de 3 Cartões */}
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
           {items.map((item) => (
             <div
               key={item.title}
-              className="group grid lg:grid-cols-[80px_1fr] gap-8 items-start p-8 rounded-2xl border border-neutral-200 bg-white hover:border-orange-500 transition-all duration-300"
+              className="group p-6 sm:p-8 bg-white rounded-2xl border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-start"
             >
               {/* Ícone */}
-              <div className="w-16 h-16 rounded-xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300 mb-6 shrink-0">
                 <i
-                  className={`${item.icon} text-2xl text-orange-500 group-hover:text-white transition-colors`}
+                  className={`${item.icon} text-xl text-orange-500 group-hover:text-white transition-colors duration-300`}
                 ></i>
               </div>
 
               {/* Texto */}
               <div>
-                <h3 className="text-2xl font-bold text-neutral-900">
+                <h3 className="text-xl font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-neutral-600 leading-8">
+                <p className="mt-3 text-neutral-600 text-xs sm:text-sm leading-relaxed">
                   {item.description}
                 </p>
               </div>

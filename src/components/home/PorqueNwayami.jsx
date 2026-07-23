@@ -35,52 +35,50 @@ export default function PorqueNwayami() {
   ];
 
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
 
-        {/* HEADER simples e forte */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-            Engenharia com
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-400">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+            Engenharia com{" "}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               rigor e confiança
             </span>
           </h2>
 
-          <p className="mt-8 text-neutral-600 text-lg leading-8">
+          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Entregamos soluções de engenharia e construção com foco em qualidade,
             segurança e execução responsável.
           </p>
         </div>
 
-        {/* GRID LIMPO */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
+        {/* Grid de Razões */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {reasons.map((item) => (
             <div
               key={item.title}
-              className="group flex gap-5"
+              className="group flex gap-4 p-4 sm:p-5 rounded-xl transition-colors duration-300 hover:bg-neutral-50"
             >
 
-              {/* ÍCONE SIMPLES */}
-              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-orange-500/10 group-hover:bg-orange-500 transition">
-                <i className={`${item.icon} text-orange-500 group-hover:text-white text-sm`}></i>
+              {/* Ícone Ajustado */}
+              <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-orange-500/10 group-hover:bg-orange-500 transition-colors duration-300">
+                <i className={`${item.icon} text-orange-500 group-hover:text-white text-sm transition-colors duration-300`}></i>
               </div>
 
-              {/* TEXTO */}
+              {/* Conteúdo */}
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900 group-hover:text-orange-500 transition">
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-neutral-600 text-sm leading-6">
+                <p className="mt-1.5 text-neutral-600 text-xs sm:text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
 
             </div>
           ))}
-
         </div>
 
       </div>
