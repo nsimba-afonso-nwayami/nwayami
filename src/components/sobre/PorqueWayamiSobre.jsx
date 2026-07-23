@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function PorqueWayamiSobre() {
   const diferenciais = [
     {
@@ -41,31 +43,47 @@ export default function PorqueWayamiSobre() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Coluna de Texto Sticky */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
-              Porque empresas e clientes{" "}
-              <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
-                confiam na Nwayami
-              </span>
-            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+                Porque empresas e clientes{" "}
+                <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
+                  confiam na Nwayami
+                </span>
+              </h2>
 
-            <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed">
-              A nossa atuação baseia-se na excelência técnica, transparência e
-              compromisso. Trabalhamos para entregar projetos que unem
-              qualidade, inovação e confiança em cada detalhe.
-            </p>
+              <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed">
+                A nossa atuação baseia-se na excelência técnica, transparência e
+                compromisso. Trabalhamos para entregar projetos que unem
+                qualidade, inovação e confiança em cada detalhe.
+              </p>
+            </motion.div>
           </div>
 
           {/* Lista de Diferenciais */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-            {diferenciais.map((item) => (
-              <div
+            {diferenciais.map((item, index) => (
+              <motion.div
                 key={item.title}
-                className="group relative flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-neutral-50/60 hover:bg-white border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -4 }}
+                className="group relative flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-neutral-50/60 hover:bg-white border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300"
               >
                 {/* Ícone */}
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center text-base sm:text-lg group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 shadow-xs shrink-0 mt-0.5">
@@ -82,7 +100,7 @@ export default function PorqueWayamiSobre() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

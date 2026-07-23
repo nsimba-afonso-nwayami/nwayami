@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function NossoProcesso() {
   const processo = [
     {
@@ -29,10 +31,16 @@ export default function NossoProcesso() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-50">
+    <section className="py-24 bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mx-auto text-center mb-14 sm:mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
             Um processo estruturado para{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
@@ -45,21 +53,38 @@ export default function NossoProcesso() {
             assegurando qualidade, transparência e eficiência desde o primeiro
             contacto até à entrega final.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Linha Contínua de Conexão (Visível apenas em ecrãs grandes) */}
-          <div
-            className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-neutral-200 z-0"
+          {/* Linha Contínua de Conexão Animada (Visível apenas em ecrãs grandes) */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.8,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-neutral-200 z-0 origin-left"
             aria-hidden="true"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
-            {processo.map((item) => (
-              <div
+            {processo.map((item, index) => (
+              <motion.div
                 key={item.title}
-                className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-white sm:bg-transparent border border-neutral-200/80 sm:border-transparent hover:bg-white hover:border-neutral-200/80 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.12,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -5 }}
+                className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-white sm:bg-transparent border border-neutral-200/80 sm:border-transparent hover:bg-white hover:border-neutral-200/80 hover:shadow-lg transition-all duration-300"
               >
                 {/* Ícone */}
                 <div className="relative mb-5 shrink-0">
@@ -76,7 +101,7 @@ export default function NossoProcesso() {
                 <p className="mt-2 text-neutral-600 text-xs sm:text-sm leading-relaxed max-w-xs">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

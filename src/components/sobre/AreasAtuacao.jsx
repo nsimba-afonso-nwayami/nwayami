@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function AreasAtuacao() {
   const areas = [
     {
@@ -59,10 +61,16 @@ export default function AreasAtuacao() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mx-auto text-center mb-12 sm:mb-14"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
             Soluções para diferentes setores{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
@@ -74,14 +82,23 @@ export default function AreasAtuacao() {
             Atuamos transversalmente em múltiplos segmentos, entregando precisão
             técnica, inovação e sustentabilidade em cada etapa do projeto.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid 3x3 Ajustado */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {areas.map((area) => (
-            <div
+          {areas.map((area, index) => (
+            <motion.div
               key={area.title}
-              className="group relative bg-neutral-50/60 hover:bg-white p-5 sm:p-6 rounded-xl border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.07,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -5 }}
+              className="group relative bg-neutral-50/60 hover:bg-white p-5 sm:p-6 rounded-xl border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Topo do Card com Ícone e Seta */}
@@ -89,7 +106,7 @@ export default function AreasAtuacao() {
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center text-base sm:text-lg group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 shadow-xs shrink-0">
                     <i className={area.icon}></i>
                   </div>
-                  <i className="fa-solid fa-arrow-up-right text-neutral-300 group-hover:text-orange-500 transition-colors duration-300 text-xs sm:text-sm"></i>
+                  <i className="fa-solid fa-arrow-up-right text-neutral-300 group-hover:text-orange-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm"></i>
                 </div>
 
                 <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
@@ -106,7 +123,7 @@ export default function AreasAtuacao() {
                 <span>Especialidade Técnica</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 group-hover:bg-orange-500 transition-colors"></span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

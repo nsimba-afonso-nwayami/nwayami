@@ -2,16 +2,23 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import SobreImg from "@/assets/img/sobre2.jpg";
 
 export default function NossaHistoria() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Imagem */}
-          <div className="relative w-full h-96 sm:h-112 lg:h-136 group">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full h-96 sm:h-112 lg:h-136 group"
+          >
             <div className="relative w-full h-full overflow-hidden rounded-2xl bg-neutral-100 shadow-xs border border-neutral-200/80 transition-all duration-500 hover:shadow-xl hover:-translate-y-0.5">
               <Image
                 src={SobreImg}
@@ -22,18 +29,40 @@ export default function NossaHistoria() {
               />
               <div className="absolute inset-0 bg-neutral-950/5 pointer-events-none"></div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Conteúdo */}
           <div className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
-              Construindo soluções que
+            {/* Título */}
+            <motion.h2
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.7,
+                delay: 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight"
+            >
+              Construindo soluções que{" "}
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
                 geram confiança
               </span>
-            </h2>
+            </motion.h2>
 
-            <div className="space-y-4 text-neutral-600 text-sm sm:text-base leading-relaxed">
+            {/* Texto */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.7,
+                delay: 0.22,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="space-y-4 text-neutral-600 text-sm sm:text-base leading-relaxed"
+            >
               <p>
                 A Nwayami Engenharia & Construção nasceu com o propósito de
                 oferecer soluções completas em engenharia, construção civil,
@@ -48,14 +77,25 @@ export default function NossaHistoria() {
               </p>
 
               <p className="text-neutral-500">
-                Acreditamos que cada projeto representa um compromisso com os
+                Areditamos que cada projeto representa um compromisso com os
                 nossos clientes, parceiros e com o desenvolvimento sustentável,
                 criando infraestruturas seguras, eficientes e preparadas para o
                 futuro.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="pt-2">
+            {/* Botão */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.6,
+                delay: 0.35,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="pt-2"
+            >
               <Link
                 href="/contato"
                 className="inline-flex items-center gap-2.5 bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-md font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 shadow-xs"
@@ -63,7 +103,7 @@ export default function NossaHistoria() {
                 Fale Connosco
                 <i className="fa-solid fa-arrow-right text-xs"></i>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
