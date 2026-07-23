@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -60,84 +61,120 @@ export default function Projetos() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-50">
+    <section className="py-24 bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-
-        {/* Header */}
+        {/* Cabeçalho Animado */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight"
+          >
             Projetos que definem{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               a nossa engenharia
             </span>
-          </h2>
+          </motion.h2>
 
-          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.7,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
+          >
             Cada projeto representa o nosso compromisso com qualidade,
             inovação e execução rigorosa em engenharia e construção civil.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Swiper Ajustado */}
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1.3}
-          loop
-          speed={1500}
-          grabCursor={true}
-          autoplay={{
-            delay: 4500,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            540: { slidesPerView: 2.2, spaceBetween: 20 },
-            768: { slidesPerView: 3.2, spaceBetween: 24 },
-            1100: { slidesPerView: 4, spaceBetween: 24 },
+        {/* Swiper com Entrada Suave ao Scroll */}
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{
+            duration: 0.8,
+            delay: 0.25,
+            ease: [0.22, 1, 0.36, 1],
           }}
         >
-          {projects.map((project, index) => (
-            <SwiperSlide key={index}>
-              <LightGallery
-                speed={500}
-                plugins={[lgZoom, lgThumbnail]}
-                elementClassNames="h-full"
-              >
-                <a
-                  href={project.image.src}
-                  className="group block bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 border border-neutral-200/80 hover:-translate-y-1 h-full"
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1.3}
+            loop
+            speed={1500}
+            grabCursor={true}
+            autoplay={{
+              delay: 4500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              540: { slidesPerView: 2.2, spaceBetween: 20 },
+              768: { slidesPerView: 3.2, spaceBetween: 24 },
+              1100: { slidesPerView: 4, spaceBetween: 24 },
+            }}
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <LightGallery
+                  speed={500}
+                  plugins={[lgZoom, lgThumbnail]}
+                  elementClassNames="h-full"
                 >
-                  {/* Image com altura reduzida para proporcionalidade */}
-                  <div className="relative h-48 sm:h-52 overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                  <a
+                    href={project.image.src}
+                    className="group block bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 border border-neutral-200/80 hover:-translate-y-1 h-full"
+                  >
+                    {/* Image */}
+                    <div className="relative h-48 sm:h-52 overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
 
-                    {/* Overlay hover */}
-                    <div className="absolute inset-0 bg-neutral-950/10 group-hover:bg-neutral-950/25 transition-colors duration-300"></div>
-                  </div>
+                      {/* Overlay hover */}
+                      <div className="absolute inset-0 bg-neutral-950/10 group-hover:bg-neutral-950/25 transition-colors duration-300"></div>
+                    </div>
 
-                  {/* Content */}
-                  <div className="p-4 sm:p-5">
-                    <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300 line-clamp-1">
-                      {project.title}
-                    </h3>
+                    {/* Content */}
+                    <div className="p-4 sm:p-5">
+                      <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300 line-clamp-1">
+                        {project.title}
+                      </h3>
 
-                    <p className="mt-1.5 text-neutral-600 leading-relaxed text-xs sm:text-sm line-clamp-3">
-                      {project.desc}
-                    </p>
-                  </div>
-                </a>
-              </LightGallery>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                      <p className="mt-1.5 text-neutral-600 leading-relaxed text-xs sm:text-sm line-clamp-3">
+                        {project.desc}
+                      </p>
+                    </div>
+                  </a>
+                </LightGallery>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
 
-        {/* CTA */}
-        <div className="flex justify-center mt-12 sm:mt-14">
+        {/* CTA Botão */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.6,
+            delay: 0.45,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="flex justify-center mt-12 sm:mt-14"
+        >
           <Link
             href="/projetos"
             className="inline-flex items-center gap-2.5 bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-md font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 shadow-xs"
@@ -145,8 +182,7 @@ export default function Projetos() {
             Ver Todos os Projetos
             <i className="fa-solid fa-arrow-right text-xs"></i>
           </Link>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

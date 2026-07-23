@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function PorqueNwayami() {
   const reasons = [
     {
@@ -35,35 +37,59 @@ export default function PorqueNwayami() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-
-        {/* Header */}
+        {/* Cabeçalho Animado */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight"
+          >
             Engenharia com{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               rigor e confiança
             </span>
-          </h2>
+          </motion.h2>
 
-          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.7,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
+          >
             Entregamos soluções de engenharia e construção com foco em qualidade,
             segurança e execução responsável.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Grid de Razões */}
+        {/* Grid de Razões com Entrada em Cascata */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {reasons.map((item) => (
-            <div
+          {reasons.map((item, index) => (
+            <motion.div
               key={item.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.5,
+                delay: 0.15 + index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="group flex gap-4 p-4 sm:p-5 rounded-xl transition-colors duration-300 hover:bg-neutral-50"
             >
-
-              {/* Ícone Ajustado */}
+              {/* Ícone */}
               <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-orange-500/10 group-hover:bg-orange-500 transition-colors duration-300">
-                <i className={`${item.icon} text-orange-500 group-hover:text-white text-sm transition-colors duration-300`}></i>
+                <i
+                  className={`${item.icon} text-orange-500 group-hover:text-white text-sm transition-colors duration-300`}
+                ></i>
               </div>
 
               {/* Conteúdo */}
@@ -76,11 +102,9 @@ export default function PorqueNwayami() {
                   {item.desc}
                 </p>
               </div>
-
-            </div>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

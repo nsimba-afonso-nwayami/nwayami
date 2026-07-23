@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Servicos() {
   const services = [
@@ -43,52 +44,79 @@ export default function Servicos() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* Cabeçalho */}
+        {/* Cabeçalho Animado */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight"
+          >
             Soluções completas para{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               construir, manter e evoluir
             </span>
-          </h2>
+          </motion.h2>
 
-          <p className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.7,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-4 text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
+          >
             Da construção civil à manutenção predial, oferecemos soluções
             integradas que garantem qualidade, segurança e desempenho em cada
             etapa do seu projeto.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Lista de Serviços */}
+        {/* Lista de Serviços com Animação em Cascata (Stagger) */}
         <div className="border-t border-neutral-200">
-          {services.map((service) => (
-            <Link
+          {services.map((service, index) => (
+            <motion.div
               key={service.title}
-              href="/servicos"
-              className="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-7 border-b border-neutral-200 hover:border-orange-500 transition-colors duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
-              <div className="flex gap-6">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
-                    {service.title}
-                  </h3>
+              <Link
+                href="/servicos"
+                className="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-7 border-b border-neutral-200 hover:border-orange-500 transition-colors duration-300"
+              >
+                <div className="flex gap-6">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 group-hover:text-orange-500 transition-colors duration-300">
+                      {service.title}
+                    </h3>
 
-                  <p className="mt-2 max-w-2xl text-neutral-600 text-sm sm:text-base leading-relaxed">
-                    {service.description}
-                  </p>
+                    <p className="mt-2 max-w-2xl text-neutral-600 text-sm sm:text-base leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-4 self-end lg:self-center">
-                <i
-                  className={`${service.icon} text-2xl text-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                ></i>
+                <div className="flex items-center gap-4 self-end lg:self-center">
+                  <i
+                    className={`${service.icon} text-2xl text-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  ></i>
 
-                <i className="fa-solid fa-arrow-right text-lg text-neutral-400 group-hover:text-orange-500 group-hover:translate-x-1.5 transition-all duration-300"></i>
-              </div>
-            </Link>
+                  <i className="fa-solid fa-arrow-right text-lg text-neutral-400 group-hover:text-orange-500 group-hover:translate-x-1.5 transition-all duration-300"></i>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
