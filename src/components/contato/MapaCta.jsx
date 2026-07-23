@@ -31,7 +31,7 @@ export default function MapaCta() {
             loading="lazy"
             allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"
-            className="w-full border-0 block grayscale-[15%] contrast-[105%] hover:grayscale-0 transition-all duration-500"
+            className="w-full border-0 block grayscale-15% contrast-105 hover:grayscale-0 transition-all duration-500"
           />
         </div>
 
