@@ -40,7 +40,6 @@ export default function MapaCta() {
           <div className="bg-neutral-50 border border-neutral-200/80 rounded-3xl p-8 md:p-12 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-xs">
             <div className="space-y-3 max-w-2xl">
               <span className="inline-flex items-center gap-2 uppercase tracking-widest text-orange-500 text-xs font-bold">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
                 Vamos conversar
               </span>
 
