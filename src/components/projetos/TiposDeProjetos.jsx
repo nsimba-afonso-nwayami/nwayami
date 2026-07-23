@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function TiposDeProjetos() {
   const areas = [
     {
@@ -40,11 +42,39 @@ export default function TiposDeProjetos() {
     },
   ];
 
+  // Variantes para entrada em cascata (stagger) dos cartões
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
-    <section className="py-24 bg-white border-b border-neutral-200/80">
+    <section className="py-24 bg-white border-b border-neutral-200/80 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mx-auto text-center mb-12 sm:mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
             Áreas onde{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
@@ -56,14 +86,23 @@ export default function TiposDeProjetos() {
             Atuamos em diferentes segmentos da engenharia e construção,
             oferecendo soluções adaptadas às necessidades de cada projeto.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid de Áreas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
           {areas.map((item) => (
-            <div
+            <motion.div
               key={item.title}
-              className="group bg-neutral-50/60 rounded-2xl border border-neutral-200/80 p-6 sm:p-7 hover:border-orange-500/40 hover:bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+              variants={cardVariants}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.2 }}
+              className="group bg-neutral-50/60 rounded-2xl border border-neutral-200/80 p-6 sm:p-7 hover:border-orange-500/40 hover:bg-white hover:shadow-lg transition-colors duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Contentor do Ícone */}
@@ -81,9 +120,9 @@ export default function TiposDeProjetos() {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
