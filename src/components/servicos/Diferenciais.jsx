@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Diferenciais() {
   const diferenciais = [
     {
@@ -41,10 +43,16 @@ export default function Diferenciais() {
   ];
 
   return (
-    <section className="py-24 bg-white border-b border-neutral-200/80">
+    <section className="py-24 bg-white border-b border-neutral-200/80 overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mx-auto text-center mb-14 sm:mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
             Diferenciais que fazem{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
@@ -56,13 +64,21 @@ export default function Diferenciais() {
             Mais do que executar obras, entregamos soluções sustentadas por
             conhecimento técnico, planeamento e compromisso.
           </p>
-        </div>
+        </motion.div>
 
         {/* Lista de Diferenciais */}
         <div className="divide-y divide-neutral-200/80">
-          {diferenciais.map((item) => (
-            <div
+          {diferenciais.map((item, index) => (
+            <motion.div
               key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="group grid grid-cols-1 lg:grid-cols-[72px_1fr_40px] gap-6 lg:gap-8 items-center py-7 sm:py-8 transition-all duration-300"
             >
               {/* Ícone */}
@@ -85,7 +101,7 @@ export default function Diferenciais() {
               <div className="hidden lg:flex justify-end text-neutral-300 text-lg group-hover:text-orange-500 group-hover:translate-x-2 transition-all duration-300">
                 <i className="fa-solid fa-arrow-right"></i>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

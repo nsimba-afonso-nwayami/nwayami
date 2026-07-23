@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import Servico1 from "@/assets/img/servico1.jpg";
 import Servico2 from "@/assets/img/servico2.jpg";
@@ -83,10 +84,16 @@ export default function NossosServicos() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-50/60">
+    <section className="py-24 bg-neutral-50/60 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Cabeçalho */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mx-auto text-center mb-12 sm:mb-14"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight leading-tight">
             Soluções integradas para{" "}
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
@@ -97,14 +104,23 @@ export default function NossosServicos() {
             Atuamos do planeamento à manutenção, oferecendo rigor técnico e
             excelência para empresas e clientes particulares.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grelha de Serviços */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {services.map((service) => (
-            <div
+          {services.map((service, index) => (
+            <motion.div
               key={service.title}
-              className="group relative bg-white rounded-xl border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.6,
+                delay: (index % 3) * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -5 }}
+              className="group relative bg-white rounded-xl border border-neutral-200/80 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
               <div>
                 {/* Imagem do Cartão */}
@@ -145,7 +161,7 @@ export default function NossosServicos() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
